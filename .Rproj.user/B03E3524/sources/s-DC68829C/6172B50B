@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1507325928796.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3459282553",
+    "id" : "6172B50B",
+    "lastKnownWriteTime" : 1507326491,
+    "last_content_update" : 1507326491037,
+    "path" : "~/R/intro-to-r/prep-data.R",
+    "project_path" : "prep-data.R",
+    "properties" : {
+        "cursorPosition" : "52,0",
+        "scrollLine" : "26",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

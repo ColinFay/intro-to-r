@@ -1,0 +1,68 @@
+#  Grouping, loops and conditional execution
+<p><a href="" id="index-Loops-and-conditional-execution"></a></p>
+<hr />
+<p><a href="" id="Grouped-expressions"></a> <a href="" id="Grouped-expressions-1"></a></p>
+<h3 id="grouped-expressions" class="section">9.1 Grouped expressions</h3>
+<p><a href="" id="index-Grouped-expressions"></a></p>
+<p>R is an expression language in the sense that its only command type is a function or expression which returns a result. Even an assignment is an expression whose result is the value assigned, and it may be used wherever any expression may be used; in particular multiple assignments are possible.</p>
+<p>Commands may be grouped together in braces, <code class="calibre2">{expr_1; …; expr_m}</code>, in which case the value of the group is the result of the last expression in the group evaluated. Since such a group is also an expression it may, for example, be itself included in parentheses and used as part of an even larger expression, and so on.</p>
+<hr />
+<p><a href="" id="Control-statements"></a> <a href="" id="Control-statements-1"></a></p>
+<h3 id="control-statements" class="section">9.2 Control statements</h3>
+<p><a href="" id="index-Control-statements"></a></p>
+<hr />
+<p><a href="" id="Conditional-execution"></a> <a href="" id="Conditional-execution_003a-if-statements"></a></p>
+<h4 id="conditional-execution-if-statements" class="subheading">9.2.1 Conditional execution: <code class="calibre2">if</code> statements</h4>
+<p><a href="" id="index-if"></a></p>
+<p>The language has available a conditional construction of the form</p>
+<div class="example">
+<pre class="example1"><code>&gt; if (expr_1) expr_2 else expr_3</code></pre>
+</div>
+<p><a href="" id="index-if-1"></a> <a href="" id="index-else"></a></p>
+<p>where expr_1 must evaluate to a single logical value and the result of the entire expression is then evident.</p>
+<p><a href="" id="index-_0026_0026"></a> <a href="" id="index-_007c_007c"></a></p>
+<p>The “short-circuit” operators <code class="calibre2">&amp;&amp;</code> and <code class="calibre2">||</code> are often used as part of the condition in an <code class="calibre2">if</code> statement. Whereas <code class="calibre2">&amp;</code> and <code class="calibre2">|</code> apply element-wise to vectors, <code class="calibre2">&amp;&amp;</code> and <code class="calibre2">||</code> apply to vectors of length one, and only evaluate their second argument if necessary.</p>
+<p><a href="" id="index-ifelse"></a></p>
+<p>There is a vectorized version of the <code class="calibre2">if</code>/<code class="calibre2">else</code> construct, the <code class="calibre2">ifelse</code> function. This has the form <code class="calibre2">ifelse(condition, a, b)</code> and returns a vector of the same length as <code class="calibre2">condition</code>, with elements <code class="calibre2">a[i]</code> if <code class="calibre2">condition[i]</code> is true, otherwise <code class="calibre2">b[i]</code> (where <code class="calibre2">a</code> and <code class="calibre2">b</code> are recycled as necessary).</p>
+<hr />
+<p><a href="" id="Repetitive-execution"></a> <a href="" id="Repetitive-execution_003a-for-loops_002c-repeat-and-while"></a></p>
+<h4 id="repetitive-execution-for-loops-repeat-and-while" class="subheading">9.2.2 Repetitive execution: <code class="calibre2">for</code> loops, <code class="calibre2">repeat</code> and <code class="calibre2">while</code></h4>
+<p><a href="" id="index-for"></a></p>
+<p>There is also a <code class="calibre2">for</code> loop construction which has the form</p>
+<div class="example">
+<pre class="example1"><code>&gt; for (name in expr_1) expr_2</code></pre>
+</div>
+<p>where <code class="calibre2">name</code> is the loop variable. expr_1 is a vector expression, (often a sequence like <code class="calibre2">1:20</code>), and expr_2 is often a grouped expression with its sub-expressions written in terms of the dummy <em>name</em>. expr_2 is repeatedly evaluated as name ranges through the values in the vector result of expr_1.</p>
+<p>As an example, suppose <code class="calibre2">ind</code> is a vector of class indicators and we wish to produce separate plots of <code class="calibre2">y</code> versus <code class="calibre2">x</code> within classes. One possibility here is to use <code class="calibre2">coplot()</code>,<a href="023-R-intro.html#FOOT21" id="DOCF21"><sup>21</sup></a> which will produce an array of plots corresponding to each level of the factor. Another way to do this, now putting all plots on the one display, is as follows:</p>
+<div class="example">
+<pre class="example1"><code>&gt; xc &lt;- split(x, ind)
+&gt; yc &lt;- split(y, ind)
+&gt; for (i in 1:length(yc)) {
+    plot(xc[[i]], yc[[i]])
+    abline(lsfit(xc[[i]], yc[[i]]))
+  }</code></pre>
+</div>
+<p><a href="" id="index-split"></a></p>
+<p>(Note the function <code class="calibre2">split()</code> which produces a list of vectors obtained by splitting a larger vector according to the classes specified by a factor. This is a useful function, mostly used in connection with boxplots. See the <code class="calibre2">help</code> facility for further details.)</p>
+<blockquote>
+<p><strong>Warning</strong>: <code class="calibre2">for()</code> loops are used in R code much less often than in compiled languages. Code that takes a ‘whole object’ view is likely to be both clearer and faster in R.</p>
+</blockquote>
+<p>Other looping facilities include the</p>
+<div class="example">
+<pre class="example1"><code>&gt; repeat expr</code></pre>
+</div>
+<p><a href="" id="index-repeat"></a></p>
+<p>statement and the</p>
+<div class="example">
+<pre class="example1"><code>&gt; while (condition) expr</code></pre>
+</div>
+<p><a href="" id="index-while"></a></p>
+<p>statement.</p>
+<p>The <code class="calibre2">break</code> statement can be used to terminate any loop, possibly abnormally. This is the only way to terminate <code class="calibre2">repeat</code> loops. <a href="" id="index-break"></a></p>
+<p>The <code class="calibre2">next</code> statement can be used to discontinue one particular cycle and skip to the “next”. <a href="" id="index-next"></a></p>
+<p>Control statements are most often used in connection with <em>functions</em> which are discussed in <a href="#Writing-your-own-functions">Writing your own functions</a>, and where more examples will emerge.</p>
+<hr />
+<p><a href="" id="Writing-your-own-functions"></a> <a href="" id="Writing-your-own-functions-1"></a></p>
+<div id="calibre_pb_22" class="calibre8">
+
+</div>

@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1507325832786.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "2E83C47C",
+    "lastKnownWriteTime" : 1507326671,
+    "last_content_update" : 1507326671069,
+    "path" : "~/R/intro-to-r/_output.yml",
+    "project_path" : "_output.yml",
+    "properties" : {
+        "cursorPosition" : "16,60",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "yaml"
+}

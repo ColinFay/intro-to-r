@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1507325832518.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8BC94DC9",
+    "lastKnownWriteTime" : 1507326051,
+    "last_content_update" : 1507326051212,
+    "path" : "~/R/intro-to-r/_bookdown.yml",
+    "project_path" : "_bookdown.yml",
+    "properties" : {
+        "cursorPosition" : "1,18",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "yaml"
+}

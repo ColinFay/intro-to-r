@@ -1,0 +1,137 @@
+#  Reading data from files
+<p><a href="" id="index-Reading-data-from-files"></a></p>
+<p>Large data objects will usually be read as values from external files rather than entered during an R session at the keyboard. R input facilities are simple and their requirements are fairly strict and even rather inflexible. There is a clear presumption by the designers of R that you will be able to modify your input files using other tools, such as file editors or Perl<a href="023-R-intro.html#FOOT20" id="DOCF20"><sup>20</sup></a> to fit in with the requirements of R. Generally this is very simple.</p>
+<p>If variables are to be held mainly in data frames, as we strongly suggest they should be, an entire data frame can be read directly with the <code class="calibre2">read.table()</code> function. There is also a more primitive input function, <code class="calibre2">scan()</code>, that can be called directly.</p>
+<p>For more details on importing data into R and also exporting data, see the <em>R Data Import/Export</em> manual.</p>
+<hr />
+<p><a href="" id="The-read_002etable_0028_0029-function"></a> <a href="" id="The-read_002etable_0028_0029-function-1"></a></p>
+<h3 id="the-read.table-function" class="section">7.1 The <code class="calibre14">read.table()</code> function</h3>
+<p><a href="" id="index-read_002etable"></a></p>
+<p>To read an entire data frame directly, the external file will normally have a special form.</p>
+<ul>
+<li>The first line of the file should have a <em>name</em> for each variable in the data frame.</li>
+<li>Each additional line of the file has as its first item a <em>row label</em> and the values for each variable.</li>
+</ul>
+<p>If the file has one fewer item in its first line than in its second, this arrangement is presumed to be in force. So the first few lines of a file to be read as a data frame might look as follows.</p>
+<blockquote>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><div class="example">
+<pre class="example1"><code>Input file form with names and row labels:
+
+     Price    Floor     Area   Rooms     Age  Cent.heat
+1   52.00    111.0      830     5       6.2      no
+2   54.75    128.0      710     5       7.5      no
+3   57.50    101.0     1000     5       4.2      no
+4   57.50    131.0      690     6       8.8      no
+5   59.75     93.0      900     5       1.9     yes
+...</code></pre>
+</div></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>By default numeric items (except row labels) are read as numeric variables and non-numeric variables, such as <code class="calibre2">Cent.heat</code> in the example, as factors. This can be changed if necessary.</p>
+<p>The function <code class="calibre2">read.table()</code> can then be used to read the data frame directly</p>
+<div class="example">
+<pre class="example1"><code>&gt; HousePrice &lt;- read.table(&quot;houses.data&quot;)</code></pre>
+</div>
+<p>Often you will want to omit including the row labels directly and use the default labels. In this case the file may omit the row label column as in the following.</p>
+<blockquote>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><div class="example">
+<pre class="example1"><code>Input file form without row labels:
+
+Price    Floor     Area   Rooms     Age  Cent.heat
+52.00    111.0      830     5       6.2      no
+54.75    128.0      710     5       7.5      no
+57.50    101.0     1000     5       4.2      no
+57.50    131.0      690     6       8.8      no
+59.75     93.0      900     5       1.9     yes
+...</code></pre>
+</div></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>The data frame may then be read as</p>
+<div class="example">
+<pre class="example1"><code>&gt; HousePrice &lt;- read.table(&quot;houses.data&quot;, header=TRUE)</code></pre>
+</div>
+<p>where the <code class="calibre2">header=TRUE</code> option specifies that the first line is a line of headings, and hence, by implication from the form of the file, that no explicit row labels are given.</p>
+<hr />
+<p><a href="" id="The-scan_0028_0029-function"></a> <a href="" id="The-scan_0028_0029-function-1"></a></p>
+<h3 id="the-scan-function" class="section">7.2 The <code class="calibre14">scan()</code> function</h3>
+<p><a href="" id="index-scan"></a></p>
+<p>Suppose the data vectors are of equal length and are to be read in parallel. Further suppose that there are three vectors, the first of mode character and the remaining two of mode numeric, and the file is input.dat. The first step is to use <code class="calibre2">scan()</code> to read in the three vectors as a list, as follows</p>
+<div class="example">
+<pre class="example1"><code>&gt; inp &lt;- scan(&quot;input.dat&quot;, list(&quot;&quot;,0,0))</code></pre>
+</div>
+<p>The second argument is a dummy list structure that establishes the mode of the three vectors to be read. The result, held in <code class="calibre2">inp</code>, is a list whose components are the three vectors read in. To separate the data items into three separate vectors, use assignments like</p>
+<div class="example">
+<pre class="example1"><code>&gt; label &lt;- inp[[1]]; x &lt;- inp[[2]]; y &lt;- inp[[3]]</code></pre>
+</div>
+<p>More conveniently, the dummy list can have named components, in which case the names can be used to access the vectors read in. For example</p>
+<div class="example">
+<pre class="example1"><code>&gt; inp &lt;- scan(&quot;input.dat&quot;, list(id=&quot;&quot;, x=0, y=0))</code></pre>
+</div>
+<p>If you wish to access the variables separately they may either be re-assigned to variables in the working frame:</p>
+<div class="example">
+<pre class="example1"><code>&gt; label &lt;- inp$id; x &lt;- inp$x; y &lt;- inp$y</code></pre>
+</div>
+<p>or the list may be attached at position 2 of the search path (see <a href="009-R-intro.html#Attaching-arbitrary-lists">Attaching arbitrary lists</a>).</p>
+<p>If the second argument is a single value and not a list, a single vector is read in, all components of which must be of the same mode as the dummy value.</p>
+<div class="example">
+<pre class="example1"><code>&gt; X &lt;- matrix(scan(&quot;light.dat&quot;, 0), ncol=5, byrow=TRUE)</code></pre>
+</div>
+<p>There are more elaborate input facilities available and these are detailed in the manuals.</p>
+<hr />
+<p><a href="" id="Accessing-builtin-datasets"></a> <a href="" id="Accessing-builtin-datasets-1"></a></p>
+<h3 id="accessing-builtin-datasets" class="section">7.3 Accessing builtin datasets</h3>
+<p><a href="" id="index-Accessing-builtin-datasets"></a> <a href="" id="index-data"></a></p>
+<p>Around 100 datasets are supplied with R (in package <strong>datasets</strong>), and others are available in packages (including the recommended packages supplied with R). To see the list of datasets currently available use</p>
+<div class="example">
+<pre class="example1"><code>data()</code></pre>
+</div>
+<p>All the datasets supplied with R are available directly by name. However, many packages still use the obsolete convention in which <code class="calibre2">data</code> was also used to load datasets into R, for example</p>
+<div class="example">
+<pre class="example1"><code>data(infert)</code></pre>
+</div>
+<p>and this can still be used with the standard packages (as in this example). In most cases this will load an R object of the same name. However, in a few cases it loads several objects, so see the on-line help for the object to see what to expect.</p>
+<p><a href="" id="Loading-data-from-other-R-packages"></a></p>
+<h4 id="loading-data-from-other-r-packages" class="subheading">7.3.1 Loading data from other R packages</h4>
+<p>To access data from a particular package, use the <code class="calibre2">package</code> argument, for example</p>
+<div class="example">
+<pre class="example1"><code>data(package=&quot;rpart&quot;)
+data(Puromycin, package=&quot;datasets&quot;)</code></pre>
+</div>
+<p>If a package has been attached by <code class="calibre2">library</code>, its datasets are automatically included in the search.</p>
+<p>User-contributed packages can be a rich source of datasets.</p>
+<hr />
+<p><a href="" id="Editing-data"></a> <a href="" id="Editing-data-1"></a></p>
+<h3 id="editing-data" class="section">7.4 Editing data</h3>
+<p><a href="" id="index-edit"></a></p>
+<p>When invoked on a data frame or matrix, <code class="calibre2">edit</code> brings up a separate spreadsheet-like environment for editing. This is useful for making small changes once a data set has been read. The command</p>
+<div class="example">
+<pre class="example1"><code>&gt; xnew &lt;- edit(xold)</code></pre>
+</div>
+<p>will allow you to edit your data set <code class="calibre2">xold</code>, and on completion the changed object is assigned to <code class="calibre2">xnew</code>. If you want to alter the original dataset <code class="calibre2">xold</code>, the simplest way is to use <code class="calibre2">fix(xold)</code>, which is equivalent to <code class="calibre2">xold &lt;- edit(xold)</code>.</p>
+<p>Use</p>
+<div class="example">
+<pre class="example1"><code>&gt; xnew &lt;- edit(data.frame())</code></pre>
+</div>
+<p>to enter new data via the spreadsheet interface.</p>
+<hr />
+<p><a href="" id="Probability-distributions"></a> <a href="" id="Probability-distributions-1"></a></p>
+<div id="calibre_pb_18" class="calibre8">
+
+</div>

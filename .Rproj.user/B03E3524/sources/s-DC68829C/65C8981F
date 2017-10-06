@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1507326292480.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1823938486",
+    "id" : "65C8981F",
+    "lastKnownWriteTime" : 1507326477,
+    "last_content_update" : 1507326477239,
+    "path" : "~/R/intro-to-r/23-R-intro.Rmd",
+    "project_path" : "23-R-intro.Rmd",
+    "properties" : {
+        "cursorPosition" : "12,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

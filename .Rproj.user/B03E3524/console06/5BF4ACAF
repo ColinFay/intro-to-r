@@ -1,0 +1,79 @@
+]0;/home/colin/R/intro-to-r]0;colin@colin-MacBookPro: ~/R/intro-to-r[01;32mcolin@colin-MacBookPro[00m:[01;34m~/R/intro-to-r[00m$ [K]0;colin@colin-MacBookPro: ~/R/intro-to-r[01;32mcolin@colin-MacBookPro[00m:[01;34m~/R/intro-to-r[00m$ echo "# intro-to-r" >> README.md
+]0;/home/colin/R/intro-to-r]0;colin@colin-MacBookPro: ~/R/intro-to-r[01;32mcolin@colin-MacBookPro[00m:[01;34m~/R/intro-to-r[00m$ git init
+Dépôt Git vide initialisé dans /home/colin/R/intro-to-r/.git/
+]0;/home/colin/R/intro-to-r]0;colin@colin-MacBookPro: ~/R/intro-to-r[01;32mcolin@colin-MacBookPro[00m:[01;34m~/R/intro-to-r[00m$ git add README.md
+]0;/home/colin/R/intro-to-r]0;colin@colin-MacBookPro: ~/R/intro-to-r[01;32mcolin@colin-MacBookPro[00m:[01;34m~/R/intro-to-r[00m$ git commit -m "first commit"
+[master (commit racine) 1aa1d69] first commit
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+]0;/home/colin/R/intro-to-r]0;colin@colin-MacBookPro: ~/R/intro-to-r[01;32mcolin@colin-MacBookPro[00m:[01;34m~/R/intro-to-r[00m$ git remote add origin https://github.com /ColinFay/intro-to-r.git
+]0;/home/colin/R/intro-to-r]0;colin@colin-MacBookPro: ~/R/intro-to-r[01;32mcolin@colin-MacBookPro[00m:[01;34m~/R/intro-to-r[00m$ git push -u origin master
+error: cannot run rpostback-askpass: Aucun fichier ou dossier de ce type
+Username for 'https://github.com': ColinG Fay
+error: cannot run rpostback-askpass: Aucun fichier ou dossier de ce type
+Password for 'https://ColinFay@github.com': 
+Décompte des objets: 3, fait.
+Delta compression using up to 4 threads.
+Compression des objets:  50% (1/2)   Compression des objets: 100% (2/2)   Compression des objets: 100% (2/2), fait.
+Écriture des objets:  33% (1/3)   Écriture des objets:  66% (2/3)   Écriture des objets: 100% (3/3)   Écriture des objets: 100% (3/3), 367 bytes | 0 bytes/s, fait.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/ColinFay/intro-to-r.git
+ * [new branch]      master -> master
+La branche master est paramétrée pour suivre la branche distante master depuis origin.
+]0;/home/colin/R/intro-to-r]0;colin@colin-MacBookPro: ~/R/intro-to-r[01;32mcolin@colin-MacBookPro[00m:[01;34m~/R/intro-to-r[00m$ [K]0;colin@colin-MacBookPro: ~/R/intro-to-r[01;32mcolin@colin-MacBookPro[00m:[01;34m~/R/intro-to-r[00m$ git commit )[K-a "p[Kcommut ever[K[K[K[K[K[K[K[K[K[K[Kfirst real commt[Kit"
+fatal: Spécifier des chemins avec l'option -a n'a pas de sens.
+]0;/home/colin/R/intro-to-r]0;colin@colin-MacBookPro: ~/R/intro-to-r[01;32mcolin@colin-MacBookPro[00m:[01;34m~/R/intro-to-r[00m$ git commit -a "first real commit"[C[C[C[1@-[1@m[1@ 
+[master 066f309] first real commit
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+]0;/home/colin/R/intro-to-r]0;colin@colin-MacBookPro: ~/R/intro-to-r[01;32mcolin@colin-MacBookPro[00m:[01;34m~/R/intro-to-r[00m$ fit [K[K[K[Kgit status
+Sur la branche master
+Votre branche est en avance sur 'origin/master' de 1 commit.
+  (utilisez "git push" pour publier vos commits locaux)
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+
+	[31m.Rhistory[m
+	[31m.Rproj.user/[m
+	[31m04-R-intro.Rmd[m
+	[31m05-R-intro.Rmd[m
+	[31m06-R-intro.Rmd[m
+	[31m07-R-intro.Rmd[m
+	[31m08-R-intro.Rmd[m
+	[31m09-R-intro.Rmd[m
+	[31m10-R-intro.Rmd[m
+	[31m11-R-intro.Rmd[m
+	[31m12-R-intro.Rmd[m
+	[31m13-R-intro.Rmd[m
+	[31m14-R-intro.Rmd[m
+	[31m15-R-intro.Rmd[m
+	[31m16-R-intro.Rmd[m
+	[31m17-R-intro.Rmd[m
+	[31m18-R-intro.Rmd[m
+	[31m19-R-intro.Rmd[m
+	[31m20-R-intro.Rmd[m
+	[31m21-R-intro.Rmd[m
+	[31m22-R-intro.Rmd[m
+	[31m23-R-intro.Rmd[m
+	[31mQQ.png[m
+	[31m_bookdown.yml[m
+	[31m_output.yml[m
+	[31mbook.bib[m
+	[31mcontent.opf[m
+	[31mcover_image.jpg[m
+	[31mdocs/[m
+	[31mecdf.png[m
+	[31mfig11.png[m
+	[31mfig12.png[m
+	[31mhist.png[m
+	[31mice.png[m
+	[31mindex.Rmd[m
+	[31mintro-to-r.Rproj[m
+	[31mintro.epub[m
+	[31mmimetype[m
+	[31mpage_styles.css[m
+	[31mpreamble.tex[m
+	[31mprep-data.R[m
+	[31mstyle.css[m
+
+aucune modification ajoutée à la validation mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
+]0;/home/colin/R/intro-to-r]0;colin@colin-MacBookPro: ~/R/intro-to-r[01;32mcolin@colin-MacBookPro[00m:[01;34m~/R/intro-to-r[00m$ git add -A
