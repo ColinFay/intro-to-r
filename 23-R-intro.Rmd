@@ -11,7 +11,7 @@
 <div class="contents">
 <hr />
 <h4 id="footnotes" class="subheading">Footnotes</h4>
-<h3 id="section" class="section"><a href="002-R-intro.html#DOCF1" id="FOOT1" class="calibre24">(1)</a></h3>
+<h3 id="section" class="section"><a href="./" id="FOOT1" class="calibre24">(1)</a></h3>
 <p>ACM Software Systems award, 1998: <a href="https://awards.acm.org/award_winners/chambers_6640862.cfm" class="uri">https://awards.acm.org/award_winners/chambers_6640862.cfm</a>.</p>
 <h3 id="section-1" class="section"><a href="introduction-and-preliminaries.html#DOCF2" id="FOOT2" class="calibre24">(2)</a></h3>
 <p>For portable R code (including that to be used in R packages) only A–Za–z0–9 should be used.</p>
