@@ -58,7 +58,7 @@
 <ul>
 <li>The components must be vectors (numeric, character, or logical), factors, numeric matrices, lists, or other data frames.</li>
 <li>Matrices, lists, and data frames provide as many variables to the new data frame as they have columns, elements, or variables, respectively.</li>
-<li>Numeric vectors, logicals and factors are included as is, and by default<a href="023-R-intro.html#FOOT18" id="DOCF18"><sup>18</sup></a> character vectors are coerced to be factors, whose levels are the unique values appearing in the vector.</li>
+<li>Numeric vectors, logicals and factors are included as is, and by default<a href="appendix-f-references.html#FOOT18" id="DOCF18"><sup>18</sup></a> character vectors are coerced to be factors, whose levels are the unique values appearing in the vector.</li>
 <li>Vector structures appearing as variables of the data frame must all have the <em>same length</em>, and matrix structures must all have the same <em>row size</em>.</li>
 </ul>
 <p>A data frame may for many purposes be regarded as a matrix with columns possibly of differing modes and attributes. It may be displayed in matrix form, and its rows and columns extracted using matrix indexing conventions.</p>
@@ -125,7 +125,7 @@
 <pre class="example1"><code>&gt; search()
 [1] &quot;.GlobalEnv&quot;   &quot;Autoloads&quot;    &quot;package:base&quot;</code></pre>
 </div>
-<p>where <code class="calibre2">.GlobalEnv</code> is the workspace.<a href="023-R-intro.html#FOOT19" id="DOCF19"><sup>19</sup></a></p>
+<p>where <code class="calibre2">.GlobalEnv</code> is the workspace.<a href="appendix-f-references.html#FOOT19" id="DOCF19"><sup>19</sup></a></p>
 <p>After <code class="calibre2">lentils</code> is attached we have</p>
 <div class="example">
 <pre class="example1"><code>&gt; search()

@@ -142,7 +142,7 @@
 <pre class="example1"><code>&gt; f &lt;- function(x, y) cos(y)/(1 + x^2)
 &gt; z &lt;- outer(x, y, f)</code></pre>
 </div>
-<p>In particular the outer product of two ordinary vectors is a doubly subscripted array (that is a matrix, of rank at most 1). Notice that the outer product operator is of course non-commutative. Defining your own R functions will be considered further in <a href="012-R-intro.html#Writing-your-own-functions">Writing your own functions</a>.</p>
+<p>In particular the outer product of two ordinary vectors is a doubly subscripted array (that is a matrix, of rank at most 1). Notice that the outer product operator is of course non-commutative. Defining your own R functions will be considered further in <a href="grouping-loops-and-conditional-execution.html#Writing-your-own-functions">Writing your own functions</a>.</p>
 <p><a href="" id="An-example_003a-Determinants-of-2-by-2-single_002ddigit-matrices"></a></p>
 <h4 id="an-example-determinants-of-2-by-2-single-digit-matrices" class="subheading">An example: Determinants of 2 by 2 single-digit matrices</h4>
 <p>As an artificial but cute example, consider the determinants of <em>2</em> by <em>2</em> matrices <em>[a, b; c, d]</em> where each entry is a non-negative integer in the range <em>0, 1, …, 9</em>, that is a digit.</p>
@@ -153,7 +153,7 @@
 &gt; fr &lt;- table(outer(d, d, &quot;-&quot;))
 &gt; plot(fr, xlab=&quot;Determinant&quot;, ylab=&quot;Frequency&quot;)</code></pre>
 </div>
-<p>Notice that <code class="calibre2">plot()</code> here uses a histogram like plot method, because it “sees” that <code class="calibre2">fr</code> is of class <code class="calibre2">&quot;table&quot;</code>. The “obvious” way of doing this problem with <code class="calibre2">for</code> loops, to be discussed in <a href="011-R-intro.html#Loops-and-conditional-execution">Loops and conditional execution</a>, is so inefficient as to be impractical.</p>
+<p>Notice that <code class="calibre2">plot()</code> here uses a histogram like plot method, because it “sees” that <code class="calibre2">fr</code> is of class <code class="calibre2">&quot;table&quot;</code>. The “obvious” way of doing this problem with <code class="calibre2">for</code> loops, to be discussed in <a href="probability-distributions.html#Loops-and-conditional-execution">Loops and conditional execution</a>, is so inefficient as to be impractical.</p>
 <p>It is also perhaps surprising that about 1 in 20 such matrices is singular.</p>
 <hr />
 <p><a href="" id="Generalized-transpose-of-an-array"></a> <a href="" id="Generalized-transpose-of-an-array-1"></a></p>
@@ -185,7 +185,7 @@
 <div class="example">
 <pre class="example1"><code>&gt; x %*% A %*% x</code></pre>
 </div>
-<p>is a quadratic form.<a href="023-R-intro.html#FOOT16" id="DOCF16"><sup>16</sup></a></p>
+<p>is a quadratic form.<a href="appendix-f-references.html#FOOT16" id="DOCF16"><sup>16</sup></a></p>
 <p><a href="" id="index-crossprod-1"></a></p>
 <p>The function <code class="calibre2">crossprod()</code> forms “crossproducts”, meaning that <code class="calibre2">crossprod(X, y)</code> is the same as <code class="calibre2">t(X) %*% y</code> but the operation is more efficient. If the second argument to <code class="calibre2">crossprod()</code> is omitted it is taken to be the same as the first.</p>
 <p><a href="" id="index-diag"></a></p>
@@ -207,7 +207,7 @@
 <pre class="example1"><code>solve(A)</code></pre>
 </div>
 <p>but rarely is needed. Numerically, it is both inefficient and potentially unstable to compute <code class="calibre2">x &lt;- solve(A) %*% b</code> instead of <code class="calibre2">solve(A,b)</code>.</p>
-<p>The quadratic form  <code class="calibre2">x %*% A^{-1} %*% x</code>   which is used in multivariate computations, should be computed by something like<a href="023-R-intro.html#FOOT17" id="DOCF17"><sup>17</sup></a> <code class="calibre2">x %*% solve(A,x)</code>, rather than computing the inverse of <code class="calibre2">A</code>.</p>
+<p>The quadratic form  <code class="calibre2">x %*% A^{-1} %*% x</code>   which is used in multivariate computations, should be computed by something like<a href="appendix-f-references.html#FOOT17" id="DOCF17"><sup>17</sup></a> <code class="calibre2">x %*% solve(A,x)</code>, rather than computing the inverse of <code class="calibre2">A</code>.</p>
 <hr />
 <p><a href="" id="Eigenvalues-and-eigenvectors"></a> <a href="" id="Eigenvalues-and-eigenvectors-1"></a></p>
 <h4 id="eigenvalues-and-eigenvectors" class="subheading">5.7.3 Eigenvalues and eigenvectors</h4>
@@ -254,7 +254,7 @@
 <pre class="example1"><code>&gt; ans &lt;- lsfit(X, y)</code></pre>
 </div>
 <p><a href="" id="index-lsfit"></a></p>
-<p>gives the results of a least squares fit where <code class="calibre2">y</code> is the vector of observations and <code class="calibre2">X</code> is the design matrix. See the help facility for more details, and also for the follow-up function <code class="calibre2">ls.diag()</code> for, among other things, regression diagnostics. Note that a grand mean term is automatically included and need not be included explicitly as a column of <code class="calibre2">X</code>. Further note that you almost always will prefer using <code class="calibre2">lm(.)</code> (see <a href="014-R-intro.html#Linear-models">Linear models</a>) to <code class="calibre2">lsfit()</code> for regression modelling.</p>
+<p>gives the results of a least squares fit where <code class="calibre2">y</code> is the vector of observations and <code class="calibre2">X</code> is the design matrix. See the help facility for more details, and also for the follow-up function <code class="calibre2">ls.diag()</code> for, among other things, regression diagnostics. Note that a grand mean term is automatically included and need not be included explicitly as a column of <code class="calibre2">X</code>. Further note that you almost always will prefer using <code class="calibre2">lm(.)</code> (see <a href="statistical-models-in-r.html#Linear-models">Linear models</a>) to <code class="calibre2">lsfit()</code> for regression modelling.</p>
 <p><a href="" id="index-qr"></a></p>
 <p>Another closely related function is <code class="calibre2">qr()</code> and its allies. Consider the following assignments</p>
 <div class="example">
@@ -265,7 +265,7 @@
 </div>
 <p>These compute the orthogonal projection of <code class="calibre2">y</code> onto the range of <code class="calibre2">X</code> in <code class="calibre2">fit</code>, the projection onto the orthogonal complement in <code class="calibre2">res</code> and the coefficient vector for the projection in <code class="calibre2">b</code>, that is, <code class="calibre2">b</code> is essentially the result of the MATLAB ‘backslash’ operator.</p>
 <p>It is not assumed that <code class="calibre2">X</code> has full column rank. Redundancies will be discovered and removed as they are found.</p>
-<p>This alternative is the older, low-level way to perform least squares calculations. Although still useful in some contexts, it would now generally be replaced by the statistical models features, as will be discussed in <a href="013-R-intro.html#Statistical-models-in-R">Statistical models in R</a>.</p>
+<p>This alternative is the older, low-level way to perform least squares calculations. Although still useful in some contexts, it would now generally be replaced by the statistical models features, as will be discussed in <a href="writing-your-own-functions.html#Statistical-models-in-R">Statistical models in R</a>.</p>
 <hr />
 <p><a href="" id="Forming-partitioned-matrices"></a> <a href="" id="Forming-partitioned-matrices_002c-cbind_0028_0029-and-rbind_0028_0029"></a></p>
 <h3 id="forming-partitioned-matrices-cbind-and-rbind" class="section">5.8 Forming partitioned matrices, <code class="calibre14">cbind()</code> and <code class="calibre14">rbind()</code></h3>

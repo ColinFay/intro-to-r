@@ -25,7 +25,7 @@
 <meta name="author" content="R Development Core Team">
 
 
-<meta name="date" content="2017-10-06">
+<meta name="date" content="2017-10-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -131,7 +131,7 @@ R operates on named <em>data structures</em>. The simplest such structure is the
 <a href="" id="index-c"></a> <a href="" id="index-vector"></a>
 </p>
 <p>
-This is an <em>assignment</em> statement using the <em>function</em> <code class="calibre2">c()</code> which in this context can take an arbitrary number of vector <em>arguments</em> and whose value is a vector got by concatenating its arguments end to end.<a href="023-R-intro.html#FOOT7" id="DOCF7"><sup>7</sup></a>
+This is an <em>assignment</em> statement using the <em>function</em> <code class="calibre2">c()</code> which in this context can take an arbitrary number of vector <em>arguments</em> and whose value is a vector got by concatenating its arguments end to end.<a href="appendix-f-references.html#FOOT7" id="DOCF7"><sup>7</sup></a>
 </p>
 <p>
 A number occurring by itself in an expression is taken as a vector of length one.
@@ -155,7 +155,7 @@ Assignments can also be made in the other direction, using the obvious change in
 <pre class="example1"><code>&gt; c(10.4, 5.6, 3.1, 6.4, 21.7) -&gt; x</code></pre>
 </div>
 <p>
-If an expression is used as a complete command, the value is printed <em>and lost</em><a href="023-R-intro.html#FOOT8" id="DOCF8"><sup>8</sup></a>. So now if we were to use the command
+If an expression is used as a complete command, the value is printed <em>and lost</em><a href="appendix-f-references.html#FOOT8" id="DOCF8"><sup>8</sup></a>. So now if we were to use the command
 </p>
 <div class="example">
 <pre class="example1"><code>&gt; 1/x</code></pre>
@@ -397,7 +397,7 @@ makes <code class="calibre2">labs</code> into the character vector
 <pre class="example1"><code>c(&quot;X1&quot;, &quot;Y2&quot;, &quot;X3&quot;, &quot;Y4&quot;, &quot;X5&quot;, &quot;Y6&quot;, &quot;X7&quot;, &quot;Y8&quot;, &quot;X9&quot;, &quot;Y10&quot;)</code></pre>
 </div>
 <p>
-Note particularly that recycling of short lists takes place here too; thus <code class="calibre2">c(“X”, “Y”)</code> is repeated 5 times to match the sequence <code class="calibre2">1:10</code>. <a href="023-R-intro.html#FOOT9" id="DOCF9"><sup>9</sup></a>
+Note particularly that recycling of short lists takes place here too; thus <code class="calibre2">c(“X”, “Y”)</code> is repeated 5 times to match the sequence <code class="calibre2">1:10</code>. <a href="appendix-f-references.html#FOOT9" id="DOCF9"><sup>9</sup></a>
 </p>
 <hr />
 <p>
@@ -508,19 +508,19 @@ Vectors are the most important type of object in R, but there are several others
 </p>
 <ul>
 <li>
-<em>matrices</em> or more generally <em>arrays</em> are multi-dimensional generalizations of vectors. In fact, they <em>are</em> vectors that can be indexed by two or more indices and will be printed in special ways. See <a href="007-R-intro.html#Arrays-and-matrices">Arrays and matrices</a>.
+<em>matrices</em> or more generally <em>arrays</em> are multi-dimensional generalizations of vectors. In fact, they <em>are</em> vectors that can be indexed by two or more indices and will be printed in special ways. See <a href="ordered-and-unordered-factors.html#Arrays-and-matrices">Arrays and matrices</a>.
 </li>
 <li>
-<em>factors</em> provide compact ways to handle categorical data. See <a href="006-R-intro.html#Factors">Factors</a>.
+<em>factors</em> provide compact ways to handle categorical data. See <a href="objects-their-modes-and-attributes.html#Factors">Factors</a>.
 </li>
 <li>
-<em>lists</em> are a general form of vector in which the various elements need not be of the same type, and are often themselves vectors or lists. Lists provide a convenient way to return the results of a statistical computation. See <a href="009-R-intro.html#Lists">Lists</a>.
+<em>lists</em> are a general form of vector in which the various elements need not be of the same type, and are often themselves vectors or lists. Lists provide a convenient way to return the results of a statistical computation. See <a href="lists-and-data-frames.html#Lists">Lists</a>.
 </li>
 <li>
-<em>data frames</em> are matrix-like structures, in which the columns can be of different types. Think of data frames as ‘data matrices’ with one row per observational unit but with (possibly) both numerical and categorical variables. Many experiments are best described by data frames: the treatments are categorical but the response is numeric. See <a href="009-R-intro.html#Data-frames">Data frames</a>.
+<em>data frames</em> are matrix-like structures, in which the columns can be of different types. Think of data frames as ‘data matrices’ with one row per observational unit but with (possibly) both numerical and categorical variables. Many experiments are best described by data frames: the treatments are categorical but the response is numeric. See <a href="lists-and-data-frames.html#Data-frames">Data frames</a>.
 </li>
 <li>
-<em>functions</em> are themselves objects in R which can be stored in the project’s workspace. This provides a simple and convenient way to extend R. See <a href="012-R-intro.html#Writing-your-own-functions">Writing your own functions</a>.
+<em>functions</em> are themselves objects in R which can be stored in the project’s workspace. This provides a simple and convenient way to extend R. See <a href="grouping-loops-and-conditional-execution.html#Writing-your-own-functions">Writing your own functions</a>.
 </li>
 </ul>
 <hr />

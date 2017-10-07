@@ -25,7 +25,7 @@
 <meta name="author" content="R Development Core Team">
 
 
-<meta name="date" content="2017-10-06">
+<meta name="date" content="2017-10-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -186,7 +186,7 @@ After this object is created it may be used in statements such as
 and so on.
 </p>
 <p>
-The classical R function <code class="calibre2">lsfit()</code> does this job quite well, and more<a href="023-R-intro.html#FOOT22" id="DOCF22"><sup>22</sup></a>. It in turn uses the functions <code class="calibre2">qr()</code> and <code class="calibre2">qr.coef()</code> in the slightly counterintuitive way above to do this part of the calculation. Hence there is probably some value in having just this part isolated in a simple to use function if it is going to be in frequent use. If so, we may wish to make it a matrix binary operator for even more convenient use.
+The classical R function <code class="calibre2">lsfit()</code> does this job quite well, and more<a href="appendix-f-references.html#FOOT22" id="DOCF22"><sup>22</sup></a>. It in turn uses the functions <code class="calibre2">qr()</code> and <code class="calibre2">qr.coef()</code> in the slightly counterintuitive way above to do this part of the calculation. Hence there is probably some value in having just this part isolated in a simple to use function if it is going to be in frequent use. If so, we may wish to make it a matrix binary operator for even more convenient use.
 </p>
 <hr />
 <p>
@@ -227,7 +227,7 @@ The matrix multiplication operator, <code class="calibre2">%*%</code>, and the o
 <a href="" id="index-Named-arguments"></a> <a href="" id="index-Default-values"></a>
 </p>
 <p>
-As first noted in <a href="005-R-intro.html#Generating-regular-sequences">Generating regular sequences</a>, if arguments to called functions are given in the “<code class="calibre2">name=object</code>” form, they may be given in any order. Furthermore the argument sequence may begin in the unnamed, positional form, and specify named arguments after the positional arguments.
+As first noted in <a href="simple-manipulations-numbers-and-vectors.html#Generating-regular-sequences">Generating regular sequences</a>, if arguments to called functions are given in the “<code class="calibre2">name=object</code>” form, they may be given in any order. Furthermore the argument sequence may begin in the unnamed, positional form, and specify named arguments after the positional arguments.
 </p>
 <p>
 Thus if there is a function <code class="calibre2">fun1</code> defined by
@@ -280,7 +280,7 @@ It is important to note that defaults may be arbitrary expressions, even involvi
 10.4 The ‘…’ argument
 </h3>
 <p>
-Another frequent requirement is to allow one function to pass on argument settings to another. For example many graphics functions use the function <code class="calibre2">par()</code> and functions like <code class="calibre2">plot()</code> allow the user to pass on graphical parameters to <code class="calibre2">par()</code> to control the graphical output. (See <a href="015-R-intro.html#The-par_0028_0029-function">The par() function</a>, for more details on the <code class="calibre2">par()</code> function.) This can be done by including an extra argument, literally ‘…’, of the function, which may then be passed on. An outline example is given below.
+Another frequent requirement is to allow one function to pass on argument settings to another. For example many graphics functions use the function <code class="calibre2">par()</code> and functions like <code class="calibre2">plot()</code> allow the user to pass on graphical parameters to <code class="calibre2">par()</code> to control the graphical output. (See <a href="graphical-procedures.html#The-par_0028_0029-function">The par() function</a>, for more details on the <code class="calibre2">par()</code> function.) This can be done by including an extra argument, literally ‘…’, of the function, which may then be passed on. An outline example is given below.
 </p>
 <div class="example">
 <pre class="example1"><code>fun1 &lt;- function(data, data.frame, graph=TRUE, limit=20, ...) {
@@ -324,7 +324,7 @@ If global and permanent assignments are intended within a function, then either 
 10.6.1 Efficiency factors in block designs
 </h4>
 <p>
-As a more complete, if a little pedestrian, example of a function, consider finding the efficiency factors for a block design. (Some aspects of this problem have already been discussed in <a href="008-R-intro.html#Index-matrices">Index matrices</a>.)
+As a more complete, if a little pedestrian, example of a function, consider finding the efficiency factors for a block design. (Some aspects of this problem have already been discussed in <a href="arrays-and-matrices.html#Index-matrices">Index matrices</a>.)
 </p>
 <p>
 A block design is defined by two factors, say <code class="calibre2">blocks</code> (<code class="calibre2">b</code> levels) and <code class="calibre2">varieties</code> (<code class="calibre2">v</code> levels). If <em>R</em> and <em>K</em> are the <em>v</em> by <em>v</em> and <em>b</em> by <em>b</em> <em>replications</em> and <em>block size</em> matrices, respectively, and <em>N</em> is the <em>b</em> by <em>v</em> incidence matrix, then the efficiency factors are defined as the eigenvalues of the matrix E = I_v - R<sup>{-1/2}N’K</sup>{-1}NR^{-1/2} = I_v - A’A, where A = K<sup>{-1/2}NR</sup>{-1/2}. One way to write the function is given below.
@@ -481,7 +481,7 @@ R&gt; cube(2)
 Lexical scope can also be used to give functions <em>mutable state</em>. In the following example we show how R can be used to mimic a bank account. A functioning bank account needs to have a balance or total, a function for making withdrawals, a function for making deposits and a function for stating the current balance. We achieve this by creating the three functions within <code class="calibre2">account</code> and then returning a list containing them. When <code class="calibre2">account</code> is invoked it takes a numerical argument <code class="calibre2">total</code> and returns a list containing the three functions. Because these functions are defined in an environment which contains <code class="calibre2">total</code>, they will have access to its value.
 </p>
 <p>
-The special assignment operator, <code class="calibre2">&lt;&lt;-</code>, <a href="" id="index-_003c_003c_002d"></a> is used to change the value associated with <code class="calibre2">total</code>. This operator looks back in enclosing environments for an environment that contains the symbol <code class="calibre2">total</code> and when it finds such an environment it replaces the value, in that environment, with the value of right hand side. If the global or top-level environment is reached without finding the symbol <code class="calibre2">total</code> then that variable is created and assigned to there. For most users <code class="calibre2">&lt;&lt;-</code> creates a global variable and assigns the value of the right hand side to it<a href="023-R-intro.html#FOOT23" id="DOCF23"><sup>23</sup></a>. Only when <code class="calibre2">&lt;&lt;-</code> has been used in a function that was returned as the value of another function will the special behavior described here occur.
+The special assignment operator, <code class="calibre2">&lt;&lt;-</code>, <a href="" id="index-_003c_003c_002d"></a> is used to change the value associated with <code class="calibre2">total</code>. This operator looks back in enclosing environments for an environment that contains the symbol <code class="calibre2">total</code> and when it finds such an environment it replaces the value, in that environment, with the value of right hand side. If the global or top-level environment is reached without finding the symbol <code class="calibre2">total</code> then that variable is created and assigned to there. For most users <code class="calibre2">&lt;&lt;-</code> creates a global variable and assigns the value of the right hand side to it<a href="appendix-f-references.html#FOOT23" id="DOCF23"><sup>23</sup></a>. Only when <code class="calibre2">&lt;&lt;-</code> has been used in a function that was returned as the value of another function will the special behavior described here occur.
 </p>
 <div class="example">
 <pre class="example1"><code>open.account &lt;- function(total) {
@@ -529,7 +529,7 @@ ross$withdraw(500)</code></pre>
 Users can customize their environment in several different ways. There is a site initialization file and every directory can have its own special initialization file. Finally, the special functions <code class="calibre2">.First</code> and <code class="calibre2">.Last</code> can be used.
 </p>
 <p>
-The location of the site initialization file is taken from the value of the <code class="calibre2">R_PROFILE</code> environment variable. If that variable is unset, the file Rprofile.site in the R home subdirectory etc is used. This file should contain the commands that you want to execute every time R is started under your system. A second, personal, profile file named .Rprofile<a href="023-R-intro.html#FOOT24" id="DOCF24"><sup>24</sup></a> can be placed in any directory. If R is invoked in that directory then that file will be sourced. This file gives individual users control over their workspace and allows for different startup procedures in different working directories. If no .Rprofile file is found in the startup directory, then R looks for a .Rprofile file in the user’s home directory and uses that (if it exists). If the environment variable <code class="calibre2">R_PROFILE_USER</code> is set, the file it points to is used instead of the .Rprofile files.
+The location of the site initialization file is taken from the value of the <code class="calibre2">R_PROFILE</code> environment variable. If that variable is unset, the file Rprofile.site in the R home subdirectory etc is used. This file should contain the commands that you want to execute every time R is started under your system. A second, personal, profile file named .Rprofile<a href="appendix-f-references.html#FOOT24" id="DOCF24"><sup>24</sup></a> can be placed in any directory. If R is invoked in that directory then that file will be sourced. This file gives individual users control over their workspace and allows for different startup procedures in different working directories. If no .Rprofile file is found in the startup directory, then R looks for a .Rprofile file in the user’s home directory and uses that (if it exists). If the environment variable <code class="calibre2">R_PROFILE_USER</code> is set, the file it points to is used instead of the .Rprofile files.
 </p>
 <p>
 Any function named <code class="calibre2">.First()</code> in either of the two profile files or in the .RData image has a special status. It is automatically performed at the beginning of an R session and may be used to initialize the environment. For example, the definition in the example below alters the prompt to <code class="calibre2"><span class="math inline">\(&lt;/code&gt; and sets up various other useful things that can then be taken for granted in the rest of the session.&lt;/p&gt; &lt;p&gt;Thus, the sequence in which files are executed is, Rprofile.site, the user profile, .RData and then &lt;code class=&quot;calibre2&quot;&gt;.First()&lt;/code&gt;. A definition in later files will mask definitions in earlier files.&lt;/p&gt; &lt;div class=&quot;example&quot;&gt; &lt;pre class=&quot;example1&quot;&gt;&lt;code&gt;&amp;gt; .First &amp;lt;- function() {  options(prompt=&amp;quot;\)</span> “, continue=”+“) # $ is the prompt options(digits=5, length=999) # custom numbers and printout x11() # for graphics par(pch =”+“) # plotting character source(file.path(Sys.getenv(”HOME“),”R“,”mystuff.R“)) # my personal functions library(MASS) # attach a package }</code>

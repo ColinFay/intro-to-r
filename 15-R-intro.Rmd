@@ -286,7 +286,7 @@
   … plotting commands …
 &gt; par(oldpar)</code></pre>
 </div>
-<p>To save and restore <em>all</em> settable<a href="023-R-intro.html#FOOT25" id="DOCF25"><sup>25</sup></a> graphical parameters use</p>
+<p>To save and restore <em>all</em> settable<a href="appendix-f-references.html#FOOT25" id="DOCF25"><sup>25</sup></a> graphical parameters use</p>
 <div class="example">
 <pre class="example1"><code>&gt; oldpar &lt;- par(no.readonly=TRUE)
   … plotting commands …

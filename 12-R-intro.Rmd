@@ -33,7 +33,7 @@
 <pre class="example1"><code>&gt; for (name in expr_1) expr_2</code></pre>
 </div>
 <p>where <code class="calibre2">name</code> is the loop variable. expr_1 is a vector expression, (often a sequence like <code class="calibre2">1:20</code>), and expr_2 is often a grouped expression with its sub-expressions written in terms of the dummy <em>name</em>. expr_2 is repeatedly evaluated as name ranges through the values in the vector result of expr_1.</p>
-<p>As an example, suppose <code class="calibre2">ind</code> is a vector of class indicators and we wish to produce separate plots of <code class="calibre2">y</code> versus <code class="calibre2">x</code> within classes. One possibility here is to use <code class="calibre2">coplot()</code>,<a href="023-R-intro.html#FOOT21" id="DOCF21"><sup>21</sup></a> which will produce an array of plots corresponding to each level of the factor. Another way to do this, now putting all plots on the one display, is as follows:</p>
+<p>As an example, suppose <code class="calibre2">ind</code> is a vector of class indicators and we wish to produce separate plots of <code class="calibre2">y</code> versus <code class="calibre2">x</code> within classes. One possibility here is to use <code class="calibre2">coplot()</code>,<a href="appendix-f-references.html#FOOT21" id="DOCF21"><sup>21</sup></a> which will produce an array of plots corresponding to each level of the factor. Another way to do this, now putting all plots on the one display, is as follows:</p>
 <div class="example">
 <pre class="example1"><code>&gt; xc &lt;- split(x, ind)
 &gt; yc &lt;- split(y, ind)

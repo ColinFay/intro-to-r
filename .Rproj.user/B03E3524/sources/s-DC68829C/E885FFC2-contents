@@ -38,7 +38,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p><a href="" id="Suggestions-to-the-reader"></a></p>
 <h4 id="suggestions-to-the-reader" class="subheading">Suggestions to the reader</h4>
 <p>Most R novices will start with the introductory session in Appendix A. This should give some familiarity with the style of R sessions and more importantly some instant feedback on what actually happens.</p>
-<p>Many users will come to R mainly for its graphical facilities. See <a href="014-R-intro.html#Graphics">Graphics</a>, which can be read at almost any time and need not wait until all the preceding sections have been digested.</p>
+<p>Many users will come to R mainly for its graphical facilities. See <a href="graphical-procedures.html#Graphics">Graphics</a>, which can be read at almost any time and need not wait until all the preceding sections have been digested.</p>
 <hr />
 <p><a href="" id="Introduction-and-preliminaries"></a> <a href="" id="Introduction-and-preliminaries-1"></a></p>
 <div id="calibre_pb_4" class="calibre8">

@@ -25,7 +25,7 @@
 <meta name="author" content="R Development Core Team">
 
 
-<meta name="date" content="2017-10-06">
+<meta name="date" content="2017-10-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -121,19 +121,19 @@ C.1 Preliminaries
 When the GNU <strong>readline</strong> library is available at the time R is configured for compilation under UNIX, an inbuilt command line editor allowing recall, editing and re-submission of prior commands is used. Note that other versions of <strong>readline</strong> exist and may be used by the inbuilt command line editor: this used to happen on macOS.
 </p>
 <p>
-It can be disabled (useful for usage with ESS <a href="023-R-intro.html#FOOT27" id="DOCF27"><sup>27</sup></a>) using the startup option –no-readline.
+It can be disabled (useful for usage with ESS <a href="appendix-f-references.html#FOOT27" id="DOCF27"><sup>27</sup></a>) using the startup option –no-readline.
 </p>
 <p>
 Windows versions of R have somewhat simpler command-line editing: see ‘Console’ under the ‘Help’ menu of the GUI, and the file README.Rterm for command-line editing under <code class="calibre2">Rterm.exe</code>.
 </p>
 <p>
-When using R with GNU<a href="023-R-intro.html#FOOT28" id="DOCF28"><sup>28</sup></a> <strong>readline</strong> capabilities, the functions described below are available, as well as others (probably) documented in <code class="calibre2">man readline</code> or <code class="calibre2">info readline</code> on your system.
+When using R with GNU<a href="appendix-f-references.html#FOOT28" id="DOCF28"><sup>28</sup></a> <strong>readline</strong> capabilities, the functions described below are available, as well as others (probably) documented in <code class="calibre2">man readline</code> or <code class="calibre2">info readline</code> on your system.
 </p>
 <p>
-Many of these use either Control or Meta characters. Control characters, such as Control-m, are obtained by holding the <code class="calibre2">CTRL</code> down while you press the <code class="calibre2">m</code> key, and are written as C-m below. Meta characters, such as Meta-b, are typed by holding down <code class="calibre2">META</code><a href="023-R-intro.html#FOOT29" id="DOCF29"><sup>29</sup></a> and pressing <code class="calibre2">b</code>, and written as M-b in the following. If your terminal does not have a <code class="calibre2">META</code> key enabled, you can still type Meta characters using two-character sequences starting with ESC. Thus, to enter M-b, you could type <code class="calibre2">ESC</code><code class="calibre2">b</code>. The ESC character sequences are also allowed on terminals with real Meta keys. Note that case is significant for Meta characters.
+Many of these use either Control or Meta characters. Control characters, such as Control-m, are obtained by holding the <code class="calibre2">CTRL</code> down while you press the <code class="calibre2">m</code> key, and are written as C-m below. Meta characters, such as Meta-b, are typed by holding down <code class="calibre2">META</code><a href="appendix-f-references.html#FOOT29" id="DOCF29"><sup>29</sup></a> and pressing <code class="calibre2">b</code>, and written as M-b in the following. If your terminal does not have a <code class="calibre2">META</code> key enabled, you can still type Meta characters using two-character sequences starting with ESC. Thus, to enter M-b, you could type <code class="calibre2">ESC</code><code class="calibre2">b</code>. The ESC character sequences are also allowed on terminals with real Meta keys. Note that case is significant for Meta characters.
 </p>
 <p>
-Some but not all versions<a href="023-R-intro.html#FOOT30" id="DOCF30"><sup>30</sup></a> of <strong>readline</strong> will recognize resizing of the terminal window so this is best avoided.
+Some but not all versions<a href="appendix-f-references.html#FOOT30" id="DOCF30"><sup>30</sup></a> of <strong>readline</strong> will recognize resizing of the terminal window so this is best avoided.
 </p>
 <p>
 <a href="" id="Editing-actions"></a>

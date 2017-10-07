@@ -14,4 +14,4 @@ bookdown::gitbook:
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
         <li><a href="https://github.com/ColinFay" target="blank">Adapted by Colin Fay</a></li>
-        <li><a href="https://cran.r-project.org/manuals.html" target="blank">from the R manuals</a></li>
+        <li><a href="https://github.com/ColinFay" target="blank">from the R manuals</a></li>

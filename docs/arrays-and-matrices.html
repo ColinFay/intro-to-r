@@ -25,7 +25,7 @@
 <meta name="author" content="R Development Core Team">
 
 
-<meta name="date" content="2017-10-06">
+<meta name="date" content="2017-10-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -377,7 +377,7 @@ The multiplication function can be replaced by an arbitrary function of two vari
 &gt; z &lt;- outer(x, y, f)</code></pre>
 </div>
 <p>
-In particular the outer product of two ordinary vectors is a doubly subscripted array (that is a matrix, of rank at most 1). Notice that the outer product operator is of course non-commutative. Defining your own R functions will be considered further in <a href="012-R-intro.html#Writing-your-own-functions">Writing your own functions</a>.
+In particular the outer product of two ordinary vectors is a doubly subscripted array (that is a matrix, of rank at most 1). Notice that the outer product operator is of course non-commutative. Defining your own R functions will be considered further in <a href="grouping-loops-and-conditional-execution.html#Writing-your-own-functions">Writing your own functions</a>.
 </p>
 <p>
 <a href="" id="An-example_003a-Determinants-of-2-by-2-single_002ddigit-matrices"></a>
@@ -400,7 +400,7 @@ A neat way of doing this uses the <code class="calibre2">outer()</code> function
 &gt; plot(fr, xlab=&quot;Determinant&quot;, ylab=&quot;Frequency&quot;)</code></pre>
 </div>
 <p>
-Notice that <code class="calibre2">plot()</code> here uses a histogram like plot method, because it “sees” that <code class="calibre2">fr</code> is of class <code class="calibre2">“table”</code>. The “obvious” way of doing this problem with <code class="calibre2">for</code> loops, to be discussed in <a href="011-R-intro.html#Loops-and-conditional-execution">Loops and conditional execution</a>, is so inefficient as to be impractical.
+Notice that <code class="calibre2">plot()</code> here uses a histogram like plot method, because it “sees” that <code class="calibre2">fr</code> is of class <code class="calibre2">“table”</code>. The “obvious” way of doing this problem with <code class="calibre2">for</code> loops, to be discussed in <a href="probability-distributions.html#Loops-and-conditional-execution">Loops and conditional execution</a>, is so inefficient as to be impractical.
 </p>
 <p>
 It is also perhaps surprising that about 1 in 20 such matrices is singular.
@@ -466,7 +466,7 @@ is the matrix product. If <code class="calibre2">x</code> is a vector, then
 <pre class="example1"><code>&gt; x %*% A %*% x</code></pre>
 </div>
 <p>
-is a quadratic form.<a href="023-R-intro.html#FOOT16" id="DOCF16"><sup>16</sup></a>
+is a quadratic form.<a href="appendix-f-references.html#FOOT16" id="DOCF16"><sup>16</sup></a>
 </p>
 <p>
 <a href="" id="index-crossprod-1"></a>
@@ -512,7 +512,7 @@ solves the system, returning <code class="calibre2">x</code> (up to some accurac
 but rarely is needed. Numerically, it is both inefficient and potentially unstable to compute <code class="calibre2">x &lt;- solve(A) %*% b</code> instead of <code class="calibre2">solve(A,b)</code>.
 </p>
 <p>
-The quadratic form  <code class="calibre2">x %<em>% A^{-1} %</em>% x</code>   which is used in multivariate computations, should be computed by something like<a href="023-R-intro.html#FOOT17" id="DOCF17"><sup>17</sup></a> <code class="calibre2">x %*% solve(A,x)</code>, rather than computing the inverse of <code class="calibre2">A</code>.
+The quadratic form  <code class="calibre2">x %<em>% A^{-1} %</em>% x</code>   which is used in multivariate computations, should be computed by something like<a href="appendix-f-references.html#FOOT17" id="DOCF17"><sup>17</sup></a> <code class="calibre2">x %*% solve(A,x)</code>, rather than computing the inverse of <code class="calibre2">A</code>.
 </p>
 <hr />
 <p>
@@ -605,7 +605,7 @@ The function <code class="calibre2">lsfit()</code> returns a list giving results
 <a href="" id="index-lsfit"></a>
 </p>
 <p>
-gives the results of a least squares fit where <code class="calibre2">y</code> is the vector of observations and <code class="calibre2">X</code> is the design matrix. See the help facility for more details, and also for the follow-up function <code class="calibre2">ls.diag()</code> for, among other things, regression diagnostics. Note that a grand mean term is automatically included and need not be included explicitly as a column of <code class="calibre2">X</code>. Further note that you almost always will prefer using <code class="calibre2">lm(.)</code> (see <a href="014-R-intro.html#Linear-models">Linear models</a>) to <code class="calibre2">lsfit()</code> for regression modelling.
+gives the results of a least squares fit where <code class="calibre2">y</code> is the vector of observations and <code class="calibre2">X</code> is the design matrix. See the help facility for more details, and also for the follow-up function <code class="calibre2">ls.diag()</code> for, among other things, regression diagnostics. Note that a grand mean term is automatically included and need not be included explicitly as a column of <code class="calibre2">X</code>. Further note that you almost always will prefer using <code class="calibre2">lm(.)</code> (see <a href="statistical-models-in-r.html#Linear-models">Linear models</a>) to <code class="calibre2">lsfit()</code> for regression modelling.
 </p>
 <p>
 <a href="" id="index-qr"></a>
@@ -626,7 +626,7 @@ These compute the orthogonal projection of <code class="calibre2">y</code> onto 
 It is not assumed that <code class="calibre2">X</code> has full column rank. Redundancies will be discovered and removed as they are found.
 </p>
 <p>
-This alternative is the older, low-level way to perform least squares calculations. Although still useful in some contexts, it would now generally be replaced by the statistical models features, as will be discussed in <a href="013-R-intro.html#Statistical-models-in-R">Statistical models in R</a>.
+This alternative is the older, low-level way to perform least squares calculations. Although still useful in some contexts, it would now generally be replaced by the statistical models features, as will be discussed in <a href="writing-your-own-functions.html#Statistical-models-in-R">Statistical models in R</a>.
 </p>
 <hr />
 <p>

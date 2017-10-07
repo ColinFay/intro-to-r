@@ -61,3 +61,33 @@ file.append("index.Rmd", "02-R-intro.Rmd")
 file.append("index.Rmd", "03-R-intro.Rmd")
 file.remove(c("00-R-intro.Rmd","01-R-intro.Rmd", "02-R-intro.Rmd", "03-R-intro.Rmd"))
 
+# Manually replace url 
+
+clean_url <- function(file){
+  a <- readLines( file )
+  
+  a %<>% str_replace_all("004-R-intro.html", "introduction-and-preliminaries.html") %>%
+    str_replace_all("005-R-intro.html", "simple-manipulations-numbers-and-vectors.html") %>%
+    str_replace_all("006-R-intro.html", "objects-their-modes-and-attributes.html") %>%
+    str_replace_all("007-R-intro.html", "ordered-and-unordered-factors.html") %>%
+    str_replace_all("008-R-intro.html", "arrays-and-matrices.html") %>%
+    str_replace_all("009-R-intro.html", "lists-and-data-frames.html") %>%
+    str_replace_all("010-R-intro.html", "reading-data-from-files.html") %>%
+    str_replace_all("011-R-intro.html", "probability-distributions.html") %>%
+    str_replace_all("012-R-intro.html", "grouping-loops-and-conditional-execution.html") %>%
+    str_replace_all("013-R-intro.html", "writing-your-own-functions.html") %>%
+    str_replace_all("014-R-intro.html", "statistical-models-in-r.html") %>%
+    str_replace_all("015-R-intro.html", "graphical-procedures.html") %>%
+    str_replace_all("016-R-intro.html", "packages.html") %>%
+    str_replace_all("017-R-intro.html", "os-facilities.html") %>%
+    str_replace_all("018-R-intro.html", "appendix-a-a-sample-session.html") %>%
+    str_replace_all("019-R-intro.html", "appendix-b-invoking-r.html") %>%
+    str_replace_all("020-R-intro.html", "appendix-c-the-command-line-editor.html") %>%
+    str_replace_all("021-R-intro.html", "appendix-d-function-and-variable-index.html") %>%
+    str_replace_all("022-R-intro.html", "appendix-e-concept-index.html") %>%
+    str_replace_all("023-R-intro.html", "appendix-f-references.html") 
+  write(a, file = file)
+}
+
+purrr::walk(list.files(pattern = "Rmd"), clean_url)
+bookdown::render_book("index.Rmd", "bookdown::gitbook")

@@ -25,7 +25,7 @@
 <meta name="author" content="R Development Core Team">
 
 
-<meta name="date" content="2017-10-06">
+<meta name="date" content="2017-10-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -122,7 +122,7 @@
 3.1 Intrinsic attributes: mode and length
 </h3>
 <p>
-The entities R operates on are technically known as <em>objects</em>. Examples are vectors of numeric (real) or complex values, vectors of logical values and vectors of character strings. These are known as “atomic” structures since their components are all of the same type, or <em>mode</em>, namely <em>numeric</em><a href="023-R-intro.html#FOOT10" id="DOCF10"><sup>10</sup></a>, <em>complex</em>, <em>logical</em>, <em>character</em> and <em>raw</em>.
+The entities R operates on are technically known as <em>objects</em>. Examples are vectors of numeric (real) or complex values, vectors of logical values and vectors of character strings. These are known as “atomic” structures since their components are all of the same type, or <em>mode</em>, namely <em>numeric</em><a href="appendix-f-references.html#FOOT10" id="DOCF10"><sup>10</sup></a>, <em>complex</em>, <em>logical</em>, <em>character</em> and <em>raw</em>.
 </p>
 <p>
 Vectors must have their values <em>all of the same mode</em>. Thus any given vector must be unambiguously either <em>logical</em>, <em>numeric</em>, <em>complex</em>, <em>character</em> or <em>raw</em>. (The only apparent exception to this rule is the special “value” listed as <code class="calibre2">NA</code> for quantities not available, but in fact there are several types of <code class="calibre2">NA</code>). Note that a vector can be empty and still have a mode. For example the empty character string vector is listed as <code class="calibre2">character(0)</code> and the empty numeric vector as <code class="calibre2">numeric(0)</code>.
@@ -134,7 +134,7 @@ R also operates on objects called <em>lists</em>, which are of mode <em>list</em
 The other recursive structures are those of mode <em>function</em> and <em>expression</em>. Functions are the objects that form part of the R system along with similar user written functions, which we discuss in some detail later. Expressions as objects form an advanced part of R which will not be discussed in this guide, except indirectly when we discuss <em>formulae</em> used with modeling in R.
 </p>
 <p>
-By the <em>mode</em> of an object we mean the basic type of its fundamental constituents. This is a special case of a “property” of an object. Another property of every object is its <em>length</em>. The functions <code class="calibre2">mode(object)</code> and <code class="calibre2">length(object)</code> can be used to find out the mode and length of any defined structure <a href="023-R-intro.html#FOOT11" id="DOCF11"><sup>11</sup></a>.
+By the <em>mode</em> of an object we mean the basic type of its fundamental constituents. This is a special case of a “property” of an object. Another property of every object is its <em>length</em>. The functions <code class="calibre2">mode(object)</code> and <code class="calibre2">length(object)</code> can be used to find out the mode and length of any defined structure <a href="appendix-f-references.html#FOOT11" id="DOCF11"><sup>11</sup></a>.
 </p>
 <p>
 Further properties of an object are usually provided by <code class="calibre2">attributes(object)</code>, see <a href="objects-their-modes-and-attributes.html#Getting-and-setting-attributes">Getting and setting attributes</a>. Because of this, <em>mode</em> and <em>length</em> are also called “intrinsic attributes” of an object. <a href="" id="index-mode"></a> <a href="" id="index-length-1"></a>
@@ -161,7 +161,7 @@ after which <code class="calibre2">digits</code> is the character vector <code c
 <pre class="example1"><code>&gt; d &lt;- as.integer(digits)</code></pre>
 </div>
 <p>
-Now <code class="calibre2">d</code> and <code class="calibre2">z</code> are the same.<a href="023-R-intro.html#FOOT12" id="DOCF12"><sup>12</sup></a> There is a large collection of functions of the form <code class="calibre2">as.something()</code> for either coercion from one mode to another, or for investing an object with some other attribute it may not already possess. The reader should consult the different help files to become familiar with them.
+Now <code class="calibre2">d</code> and <code class="calibre2">z</code> are the same.<a href="appendix-f-references.html#FOOT12" id="DOCF12"><sup>12</sup></a> There is a large collection of functions of the form <code class="calibre2">as.something()</code> for either coercion from one mode to another, or for investing an object with some other attribute it may not already possess. The reader should consult the different help files to become familiar with them.
 </p>
 <hr />
 <p>
@@ -186,7 +186,7 @@ makes <code class="calibre2">e</code> an empty vector structure of mode numeric.
 now makes <code class="calibre2">e</code> a vector of length 3, (the first two components of which are at this point both <code class="calibre2">NA</code>). This applies to any structure at all, provided the mode of the additional component(s) agrees with the mode of the object in the first place.
 </p>
 <p>
-This automatic adjustment of lengths of an object is used often, for example in the <code class="calibre2">scan()</code> function for input. (see <a href="010-R-intro.html#The-scan_0028_0029-function">The scan() function</a>.)
+This automatic adjustment of lengths of an object is used often, for example in the <code class="calibre2">scan()</code> function for input. (see <a href="reading-data-from-files.html#The-scan_0028_0029-function">The scan() function</a>.)
 </p>
 <p>
 Conversely to truncate the size of an object requires only an assignment to do so. Hence if <code class="calibre2">alpha</code> is an object of length 10, then
@@ -242,7 +242,7 @@ allows R to treat <code class="calibre2">z</code> as if it were a 10-by-10 matri
 All objects in R have a <em>class</em>, reported by the function <code class="calibre2">class</code>. For simple vectors this is just the mode, for example <code class="calibre2">“numeric”</code>, <code class="calibre2">“logical”</code>, <code class="calibre2">“character”</code> or <code class="calibre2">“list”</code>, but <code class="calibre2">“matrix”</code>, <code class="calibre2">“array”</code>, <code class="calibre2">“factor”</code> and <code class="calibre2">“data.frame”</code> are other possible values.
 </p>
 <p>
-A special attribute known as the <em>class</em> of the object is used to allow for an object-oriented style<a href="023-R-intro.html#FOOT13" id="DOCF13"><sup>13</sup></a> of programming in R. For example if an object has class <code class="calibre2">“data.frame”</code>, it will be printed in a certain way, the <code class="calibre2">plot()</code> function will display it graphically in a certain way, and other so-called generic functions such as <code class="calibre2">summary()</code> will react to it as an argument in a way sensitive to its class.
+A special attribute known as the <em>class</em> of the object is used to allow for an object-oriented style<a href="appendix-f-references.html#FOOT13" id="DOCF13"><sup>13</sup></a> of programming in R. For example if an object has class <code class="calibre2">“data.frame”</code>, it will be printed in a certain way, the <code class="calibre2">plot()</code> function will display it graphically in a certain way, and other so-called generic functions such as <code class="calibre2">summary()</code> will react to it as an argument in a way sensitive to its class.
 </p>
 <p>
 To remove temporarily the effects of class, use the function <code class="calibre2">unclass()</code>. <a href="" id="index-unclass"></a> For example if <code class="calibre2">winter</code> has the class <code class="calibre2">“data.frame”</code> then
@@ -260,7 +260,7 @@ will print it in data frame form, which is rather like a matrix, whereas
 will print it as an ordinary list. Only in rather special situations do you need to use this facility, but one is when you are learning to come to terms with the idea of class and generic functions.
 </p>
 <p>
-Generic functions and classes will be discussed further in <a href="013-R-intro.html#Object-orientation">Object orientation</a>, but only briefly.
+Generic functions and classes will be discussed further in <a href="writing-your-own-functions.html#Object-orientation">Object orientation</a>, but only briefly.
 </p>
 <hr />
 <p>

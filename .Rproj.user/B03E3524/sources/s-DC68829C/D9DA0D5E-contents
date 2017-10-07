@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='utf-8'?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!-- This manual is for R, version 3.4.2 (2017-09-28).
+
+Copyright (C) 1990 W. N. Venables
+
+Copyright (C) 1992 W. N. Venables & D. M. Smith
+
+Copyright (C) 1997 R. Gentleman & R. Ihaka
+
+Copyright (C) 1997, 1998 M. Maechler
+
+Copyright (C) 1999-2016 R Core Team
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided that the
+entire resulting derived work is distributed under the terms of a
+permission notice identical to this one.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions,
+except that this permission notice may be stated in a translation
+approved by the R Core Team. --><!-- Created by GNU Texinfo 6.5, http://www.gnu.org/software/texinfo/ --><head>
+    <title>An Introduction to R</title>
+    <meta name="description" content="An Introduction to R"/>
+    <meta name="keywords" content="An Introduction to R"/>
+    <meta name="resource-type" content="document"/>
+    <meta name="distribution" content="global"/>
+    <meta name="Generator" content="texi2any"/>
+    <link href="#Top" rel="start" title="Top"/>
+    <link href="#Function-and-variable-index" rel="index" title="Function and variable index"/>
+    <link href="#SEC_Contents" rel="contents" title="Table of Contents"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link href="stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="page_styles.css" rel="stylesheet" type="text/css"/>
+</head>
+  <body lang="en" class="calibre">
+<h2 class="contents-heading" id="calibre_pb_37">Appendix F References</h2>
+
+<p class="calibre3">D. M. Bates and  D. G. Watts (1988), <em class="calibre10">Nonlinear Regression
+Analysis and Its Applications.</em> John Wiley &amp; Sons, New York.
+</p>
+<p class="calibre3">Richard A. Becker, John M. Chambers and Allan R. Wilks (1988),
+<em class="calibre10">The New S Language.</em> Chapman &amp; Hall, New York.
+This book is often called the “<em class="calibre10">Blue Book</em>”.
+</p>
+<p class="calibre3">John M. Chambers and Trevor J. Hastie eds. (1992),
+<em class="calibre10">Statistical Models in S.</em> Chapman &amp; Hall, New York.
+This is also called the “<em class="calibre10">White Book</em>”.
+</p>
+<p class="calibre3">John M. Chambers (1998)
+<em class="calibre10">Programming with Data</em>. Springer, New York.
+This is also called the “<em class="calibre10">Green Book</em>”.
+</p>
+<p class="calibre3">A. C. Davison and D. V. Hinkley (1997), <em class="calibre10">Bootstrap Methods
+and Their Applications</em>, Cambridge University Press.
+</p>
+<p class="calibre3">Annette J. Dobson (1990), <em class="calibre10">An Introduction to Generalized Linear
+Models</em>, Chapman and Hall, London.
+</p>
+<p class="calibre3">Peter McCullagh and John A. Nelder (1989), <em class="calibre10">Generalized Linear
+Models.</em> Second edition, Chapman and Hall, London.
+</p>
+<p class="calibre3">John A. Rice (1995), <em class="calibre10">Mathematical Statistics and Data Analysis.</em>
+Second edition.  Duxbury Press, Belmont, CA.
+</p>
+<p class="calibre3">S. D. Silvey (1970), <em class="calibre10">Statistical Inference.</em> Penguin, London.
+</p>
+<div class="contents">
+<hr class="calibre6"/>
+<h4 class="subheading">Footnotes</h4>
+
+<h3 class="section"><a href="R-intro_split_002.html#DOCF1" class="calibre24" id="FOOT1">(1)</a></h3>
+<p class="calibre3">ACM Software Systems award, 1998:
+<a href="https://awards.acm.org/award_winners/chambers_6640862.cfm">https://awards.acm.org/award_winners/chambers_6640862.cfm</a>.</p>
+<h3 class="section"><a href="R-intro_split_004.html#DOCF2" class="calibre24" id="FOOT2">(2)</a></h3>
+<p class="calibre3">For portable R code (including that to
+be used in R packages) only A–Za–z0–9 should be used.</p>
+<h3 class="section"><a href="R-intro_split_004.html#DOCF3" class="calibre24" id="FOOT3">(3)</a></h3>
+<p class="calibre3"><strong class="calibre11">not</strong> inside strings,
+nor within the argument list of a function definition</p>
+<h3 class="section"><a href="R-intro_split_004.html#DOCF4" class="calibre24" id="FOOT4">(4)</a></h3>
+<p class="calibre3">some of the
+consoles will not allow you to enter more, and amongst those which do
+some will silently discard the excess and some will use it as the start
+of the next line.</p>
+<h3 class="section"><a href="R-intro_split_004.html#DOCF5" class="calibre24" id="FOOT5">(5)</a></h3>
+<p class="calibre3">of unlimited length.</p>
+<h3 class="section"><a href="R-intro_split_004.html#DOCF6" class="calibre24" id="FOOT6">(6)</a></h3>
+<p class="calibre3">The leading “dot” in
+this file name makes it <em class="calibre10">invisible</em> in normal file listings in
+UNIX, and in default GUI file listings on macOS and Windows.</p>
+<h3 class="section"><a href="R-intro_split_005.html#DOCF7" class="calibre24" id="FOOT7">(7)</a></h3>
+<p class="calibre3">With other than vector types of argument,
+such as <code class="calibre2">list</code> mode arguments, the action of <code class="calibre2">c()</code> is rather
+different.  See <a href="R-intro_split_009.html#Concatenating-lists">Concatenating lists</a>.</p>
+<h3 class="section"><a href="R-intro_split_005.html#DOCF8" class="calibre24" id="FOOT8">(8)</a></h3>
+<p class="calibre3">Actually, it is still available as
+<code class="calibre2">.Last.value</code> before any other statements are executed.</p>
+<h3 class="section"><a href="R-intro_split_005.html#DOCF9" class="calibre24" id="FOOT9">(9)</a></h3>
+<p class="calibre3"><code class="calibre2">paste(..., collapse=<var class="calibre10">ss</var>)</code> joins the
+arguments into a single character string putting <var class="calibre10">ss</var> in between, e.g.,
+<code class="calibre2">ss &lt;- "|"</code>.  There are more tools for character manipulation, see the help
+for <code class="calibre2">sub</code> and <code class="calibre2">substring</code>.</p>
+<h3 class="section"><a href="R-intro_split_006.html#DOCF10" class="calibre24" id="FOOT10">(10)</a></h3>
+<p class="calibre3"><em class="calibre10">numeric</em> mode is
+actually an amalgam of two distinct modes, namely <em class="calibre10">integer</em> and
+<em class="calibre10">double</em> precision, as explained in the manual.</p>
+<h3 class="section"><a href="R-intro_split_006.html#DOCF11" class="calibre24" id="FOOT11">(11)</a></h3>
+<p class="calibre3">Note however that <code class="calibre2">length(<var class="calibre10">object</var>)</code> does not always
+contain intrinsic useful information, e.g., when <code class="calibre2"><var class="calibre10">object</var></code> is a
+function.</p>
+<h3 class="section"><a href="R-intro_split_006.html#DOCF12" class="calibre24" id="FOOT12">(12)</a></h3>
+<p class="calibre3">In general, coercion
+from numeric to character and back again will not be exactly reversible,
+because of roundoff errors in the character representation.</p>
+<h3 class="section"><a href="R-intro_split_006.html#DOCF13" class="calibre24" id="FOOT13">(13)</a></h3>
+<p class="calibre3">A different style using
+‘formal’ or ‘S4’ classes is provided in package <code class="calibre2">methods</code>.</p>
+<h3 class="section"><a href="R-intro_split_007.html#DOCF14" class="calibre24" id="FOOT14">(14)</a></h3>
+<p class="calibre3">Readers should note
+that there are eight states and territories in Australia, namely the
+Australian Capital Territory, New South Wales, the Northern Territory,
+Queensland, South Australia, Tasmania, Victoria and Western Australia.</p>
+<h3 class="section"><a href="R-intro_split_007.html#DOCF15" class="calibre24" id="FOOT15">(15)</a></h3>
+<p class="calibre3">Note that <code class="calibre2">tapply()</code> also works in this case
+when its second argument is not a factor, e.g.,
+‘<samp class="calibre2"><code class="calibre2">tapply(incomes, state)</code></samp>’, and this is true for quite a few
+other functions, since arguments are <em class="calibre10">coerced</em> to factors when
+necessary (using <code class="calibre2">as.factor()</code>).</p>
+<h3 class="section"><a href="R-intro_split_008.html#DOCF16" class="calibre24" id="FOOT16">(16)</a></h3>
+<p class="calibre3">Note that <code class="calibre2">x %*% x</code> is ambiguous, as
+it could mean either x’x or x x’, where x is the
+column form.  In such cases the smaller matrix seems implicitly to be
+the interpretation adopted, so the scalar x’x is in this case the
+result.  The matrix x x’ may be calculated either by <code class="calibre2">cbind(x)
+%*% x</code> or <code class="calibre2">x %*% rbind(x)</code> since the result of <code class="calibre2">rbind()</code> or
+<code class="calibre2">cbind()</code> is always a matrix.  However, the best way to compute
+x’x or x x’ is <code class="calibre2">crossprod(x)</code> or <code class="calibre2">x %o% x</code> respectively.</p>
+<h3 class="section"><a href="R-intro_split_008.html#DOCF17" class="calibre24" id="FOOT17">(17)</a></h3>
+<p class="calibre3">Even better would be to form a matrix square
+root B with A = BB’ and find the squared length
+of the solution of By = x , perhaps using the Cholesky or
+eigen decomposition of A.  </p>
+<h3 class="section"><a href="R-intro_split_009.html#DOCF18" class="calibre24" id="FOOT18">(18)</a></h3>
+<p class="calibre3">Conversion of character columns to factors is
+overridden using the <code class="calibre2">stringsAsFactors</code> argument to the
+<code class="calibre2">data.frame()</code> function.</p>
+<h3 class="section"><a href="R-intro_split_009.html#DOCF19" class="calibre24" id="FOOT19">(19)</a></h3>
+<p class="calibre3">See the on-line help
+for <code class="calibre2">autoload</code> for the meaning of the second term.</p>
+<h3 class="section"><a href="R-intro_split_010.html#DOCF20" class="calibre24" id="FOOT20">(20)</a></h3>
+<p class="calibre3">Under UNIX, the utilities
+<code class="calibre2">sed</code> or<code class="calibre2">awk</code> can be used.</p>
+<h3 class="section"><a href="R-intro_split_012.html#DOCF21" class="calibre24" id="FOOT21">(21)</a></h3>
+<p class="calibre3">to be
+discussed later, or use <code class="calibre2">xyplot</code> from package <a href="https://CRAN.R-project.org/package=lattice"><strong class="calibre11">lattice</strong></a>.</p>
+<h3 class="section"><a href="R-intro_split_013.html#DOCF22" class="calibre24" id="FOOT22">(22)</a></h3>
+<p class="calibre3">See also the methods described in <a href="R-intro_split_013.html#Statistical-models-in-R">Statistical models in R</a></p>
+<h3 class="section"><a href="R-intro_split_013.html#DOCF23" class="calibre24" id="FOOT23">(23)</a></h3>
+<p class="calibre3">In some sense this
+mimics the behavior in <small class="calibre7">S-PLUS</small> since in <small class="calibre7">S-PLUS</small> this operator always
+creates or assigns to a global variable.</p>
+<h3 class="section"><a href="R-intro_split_013.html#DOCF24" class="calibre24" id="FOOT24">(24)</a></h3>
+<p class="calibre3">So it is hidden under
+UNIX.</p>
+<h3 class="section"><a href="R-intro_split_015.html#DOCF25" class="calibre24" id="FOOT25">(25)</a></h3>
+<p class="calibre3">Some graphics
+parameters such as the size of the current device are for information
+only.</p>
+<h3 class="section"><a href="R-intro_split_019.html#DOCF26" class="calibre24" id="FOOT26">(26)</a></h3>
+<p class="calibre3">2.5Gb on versions of Windows that support 3Gb per
+process and have the support enabled: see the <samp class="calibre2">rw-FAQ</samp> Q2.9; 3.5Gb
+on most 64-bit versions of Windows.</p>
+<h3 class="section"><a href="R-intro_split_020.html#DOCF27" class="calibre24" id="FOOT27">(27)</a></h3>
+<p class="calibre3">The
+‘Emacs Speaks Statistics’ package; see the <acronym>URL</acronym>
+<a href="https://ESS.R-project.org/">https://ESS.R-project.org/</a></p>
+<h3 class="section"><a href="R-intro_split_020.html#DOCF28" class="calibre24" id="FOOT28">(28)</a></h3>
+<p class="calibre3">It is possible to build R using an
+emulation of GNU <strong class="calibre11">readline</strong>, such as one based on NetBSD’s
+<strong class="calibre11">editline</strong>, it which case only a subset of the capabilities may
+be provided.</p>
+<h3 class="section"><a href="R-intro_split_020.html#DOCF29" class="calibre24" id="FOOT29">(29)</a></h3>
+<p class="calibre3">On a PC keyboard this is usually the
+Alt key, occasionally the ‘Windows’ key.  On a Mac keyboard normally no
+meta key is available.</p>
+<h3 class="section"><a href="R-intro_split_020.html#DOCF30" class="calibre24" id="FOOT30">(30)</a></h3>
+<p class="calibre3">In particular, not versions 6.3 or
+later: this is worked around as from R 3.4.0.</p>
+</div>
+<hr class="calibre6"/>
+
+
+
+
+
+</body></html>

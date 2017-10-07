@@ -25,7 +25,7 @@
 <meta name="author" content="R Development Core Team">
 
 
-<meta name="date" content="2017-10-06">
+<meta name="date" content="2017-10-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -115,7 +115,7 @@
 <a href="" id="index-Factors"></a> <a href="" id="index-Ordered-factors"></a>
 </p>
 <p>
-A <em>factor</em> is a vector object used to specify a discrete classification (grouping) of the components of other vectors of the same length. R provides both <em>ordered</em> and <em>unordered</em> factors. While the “real” application of factors is with model formulae (see <a href="014-R-intro.html#Contrasts">Contrasts</a>), we here look at a specific example.
+A <em>factor</em> is a vector object used to specify a discrete classification (grouping) of the components of other vectors of the same length. R provides both <em>ordered</em> and <em>unordered</em> factors. While the “real” application of factors is with model formulae (see <a href="statistical-models-in-r.html#Contrasts">Contrasts</a>), we here look at a specific example.
 </p>
 <p>
 <a href="" id="A-specific-example"></a>
@@ -124,7 +124,7 @@ A <em>factor</em> is a vector object used to specify a discrete classification (
 4.1 A specific example
 </h3>
 <p>
-Suppose, for example, we have a sample of 30 tax accountants from all the states and territories of Australia<a href="023-R-intro.html#FOOT14" id="DOCF14"><sup>14</sup></a> and their individual state of origin is specified by a character vector of state mnemonics as
+Suppose, for example, we have a sample of 30 tax accountants from all the states and territories of Australia<a href="appendix-f-references.html#FOOT14" id="DOCF14"><sup>14</sup></a> and their individual state of origin is specified by a character vector of state mnemonics as
 </p>
 <div class="example">
 <pre class="example1"><code>&gt; state &lt;- c(&quot;tas&quot;, &quot;sa&quot;,  &quot;qld&quot;, &quot;nsw&quot;, &quot;nsw&quot;, &quot;nt&quot;,  &quot;wa&quot;,  &quot;wa&quot;,
@@ -189,7 +189,7 @@ giving a means vector with the components labelled by the levels
 44.500 57.333 55.500 53.600 55.000 60.500 56.000 52.250</code></pre>
 </div>
 <p>
-The function <code class="calibre2">tapply()</code> is used to apply a function, here <code class="calibre2">mean()</code>, to each group of components of the first argument, here <code class="calibre2">incomes</code>, defined by the levels of the second component, here <code class="calibre2">statef</code><a href="023-R-intro.html#FOOT15" id="DOCF15"><sup>15</sup></a>, as if they were separate vector structures. The result is a structure of the same length as the levels attribute of the factor containing the results. The reader should consult the help document for more details.
+The function <code class="calibre2">tapply()</code> is used to apply a function, here <code class="calibre2">mean()</code>, to each group of components of the first argument, here <code class="calibre2">incomes</code>, defined by the levels of the second component, here <code class="calibre2">statef</code><a href="appendix-f-references.html#FOOT15" id="DOCF15"><sup>15</sup></a>, as if they were separate vector structures. The result is a structure of the same length as the levels attribute of the factor containing the results. The reader should consult the help document for more details.
 </p>
 <p>
 Suppose further we needed to calculate the standard errors of the state income means. To do this we need to write an R function to calculate the standard error for any given vector. Since there is an builtin function <code class="calibre2">var()</code> to calculate the sample variance, such a function is a very simple one liner, specified by the assignment:
@@ -198,7 +198,7 @@ Suppose further we needed to calculate the standard errors of the state income m
 <pre class="example1"><code>&gt; stdError &lt;- function(x) sqrt(var(x)/length(x))</code></pre>
 </div>
 <p>
-(Writing functions will be considered later in <a href="012-R-intro.html#Writing-your-own-functions">Writing your own functions</a>. Note that R’s a builtin function <code class="calibre2">sd()</code> is something different.) <a href="" id="index-sd"></a> <a href="" id="index-var-1"></a> After this assignment, the standard errors are calculated by
+(Writing functions will be considered later in <a href="grouping-loops-and-conditional-execution.html#Writing-your-own-functions">Writing your own functions</a>. Note that R’s a builtin function <code class="calibre2">sd()</code> is something different.) <a href="" id="index-sd"></a> <a href="" id="index-var-1"></a> After this assignment, the standard errors are calculated by
 </p>
 <div class="example">
 <pre class="example1"><code>&gt; incster &lt;- tapply(incomes, statef, stdError)</code></pre>

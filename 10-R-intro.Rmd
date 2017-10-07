@@ -1,6 +1,6 @@
 #  Reading data from files
 <p><a href="" id="index-Reading-data-from-files"></a></p>
-<p>Large data objects will usually be read as values from external files rather than entered during an R session at the keyboard. R input facilities are simple and their requirements are fairly strict and even rather inflexible. There is a clear presumption by the designers of R that you will be able to modify your input files using other tools, such as file editors or Perl<a href="023-R-intro.html#FOOT20" id="DOCF20"><sup>20</sup></a> to fit in with the requirements of R. Generally this is very simple.</p>
+<p>Large data objects will usually be read as values from external files rather than entered during an R session at the keyboard. R input facilities are simple and their requirements are fairly strict and even rather inflexible. There is a clear presumption by the designers of R that you will be able to modify your input files using other tools, such as file editors or Perl<a href="appendix-f-references.html#FOOT20" id="DOCF20"><sup>20</sup></a> to fit in with the requirements of R. Generally this is very simple.</p>
 <p>If variables are to be held mainly in data frames, as we strongly suggest they should be, an entire data frame can be read directly with the <code class="calibre2">read.table()</code> function. There is also a more primitive input function, <code class="calibre2">scan()</code>, that can be called directly.</p>
 <p>For more details on importing data into R and also exporting data, see the <em>R Data Import/Export</em> manual.</p>
 <hr />
@@ -88,7 +88,7 @@ Price    Floor     Area   Rooms     Age  Cent.heat
 <div class="example">
 <pre class="example1"><code>&gt; label &lt;- inp$id; x &lt;- inp$x; y &lt;- inp$y</code></pre>
 </div>
-<p>or the list may be attached at position 2 of the search path (see <a href="009-R-intro.html#Attaching-arbitrary-lists">Attaching arbitrary lists</a>).</p>
+<p>or the list may be attached at position 2 of the search path (see <a href="lists-and-data-frames.html#Attaching-arbitrary-lists">Attaching arbitrary lists</a>).</p>
 <p>If the second argument is a single value and not a list, a single vector is read in, all components of which must be of the same mode as the dummy value.</p>
 <div class="example">
 <pre class="example1"><code>&gt; X &lt;- matrix(scan(&quot;light.dat&quot;, 0), ncol=5, byrow=TRUE)</code></pre>

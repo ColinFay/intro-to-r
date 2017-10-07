@@ -25,7 +25,7 @@
 <meta name="author" content="R Development Core Team">
 
 
-<meta name="date" content="2017-10-06">
+<meta name="date" content="2017-10-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -139,6 +139,191 @@ John A. Rice (1995), <em>Mathematical Statistics and Data Analysis.</em> Second
 S. D. Silvey (1970), <em>Statistical Inference.</em> Penguin, London.
 </p>
 <div class="contents">
+<hr />
+<h4 id="footnotes" class="subheading">
+Footnotes
+</h4>
+<h3 id="section" class="section">
+<a href="002-R-intro.html#DOCF1" id="FOOT1" class="calibre24">(1)</a>
+</h3>
+<p>
+ACM Software Systems award, 1998: <a href="https://awards.acm.org/award_winners/chambers_6640862.cfm" class="uri">https://awards.acm.org/award_winners/chambers_6640862.cfm</a>.
+</p>
+<h3 id="section-1" class="section">
+<a href="introduction-and-preliminaries.html#DOCF2" id="FOOT2" class="calibre24">(2)</a>
+</h3>
+<p>
+For portable R code (including that to be used in R packages) only A–Za–z0–9 should be used.
+</p>
+<h3 id="section-2" class="section">
+<a href="introduction-and-preliminaries.html#DOCF3" id="FOOT3" class="calibre24">(3)</a>
+</h3>
+<p>
+<strong>not</strong> inside strings, nor within the argument list of a function definition
+</p>
+<h3 id="section-3" class="section">
+<a href="introduction-and-preliminaries.html#DOCF4" id="FOOT4" class="calibre24">(4)</a>
+</h3>
+<p>
+some of the consoles will not allow you to enter more, and amongst those which do some will silently discard the excess and some will use it as the start of the next line.
+</p>
+<h3 id="section-4" class="section">
+<a href="introduction-and-preliminaries.html#DOCF5" id="FOOT5" class="calibre24">(5)</a>
+</h3>
+<p>
+of unlimited length.
+</p>
+<h3 id="section-5" class="section">
+<a href="introduction-and-preliminaries.html#DOCF6" id="FOOT6" class="calibre24">(6)</a>
+</h3>
+<p>
+The leading “dot” in this file name makes it <em>invisible</em> in normal file listings in UNIX, and in default GUI file listings on macOS and Windows.
+</p>
+<h3 id="section-6" class="section">
+<a href="simple-manipulations-numbers-and-vectors.html#DOCF7" id="FOOT7" class="calibre24">(7)</a>
+</h3>
+<p>
+With other than vector types of argument, such as <code class="calibre2">list</code> mode arguments, the action of <code class="calibre2">c()</code> is rather different. See <a href="lists-and-data-frames.html#Concatenating-lists">Concatenating lists</a>.
+</p>
+<h3 id="section-7" class="section">
+<a href="simple-manipulations-numbers-and-vectors.html#DOCF8" id="FOOT8" class="calibre24">(8)</a>
+</h3>
+<p>
+Actually, it is still available as <code class="calibre2">.Last.value</code> before any other statements are executed.
+</p>
+<h3 id="section-8" class="section">
+<a href="simple-manipulations-numbers-and-vectors.html#DOCF9" id="FOOT9" class="calibre24">(9)</a>
+</h3>
+<p>
+<code class="calibre2">paste(…, collapse=ss)</code> joins the arguments into a single character string putting ss in between, e.g., <code class="calibre2">ss &lt;- “|”</code>. There are more tools for character manipulation, see the help for <code class="calibre2">sub</code> and <code class="calibre2">substring</code>.
+</p>
+<h3 id="section-9" class="section">
+<a href="objects-their-modes-and-attributes.html#DOCF10" id="FOOT10" class="calibre24">(10)</a>
+</h3>
+<p>
+<em>numeric</em> mode is actually an amalgam of two distinct modes, namely <em>integer</em> and <em>double</em> precision, as explained in the manual.
+</p>
+<h3 id="section-10" class="section">
+<a href="objects-their-modes-and-attributes.html#DOCF11" id="FOOT11" class="calibre24">(11)</a>
+</h3>
+<p>
+Note however that <code class="calibre2">length(object)</code> does not always contain intrinsic useful information, e.g., when <code class="calibre2">object</code> is a function.
+</p>
+<h3 id="section-11" class="section">
+<a href="objects-their-modes-and-attributes.html#DOCF12" id="FOOT12" class="calibre24">(12)</a>
+</h3>
+<p>
+In general, coercion from numeric to character and back again will not be exactly reversible, because of roundoff errors in the character representation.
+</p>
+<h3 id="section-12" class="section">
+<a href="objects-their-modes-and-attributes.html#DOCF13" id="FOOT13" class="calibre24">(13)</a>
+</h3>
+<p>
+A different style using ‘formal’ or ‘S4’ classes is provided in package <code class="calibre2">methods</code>.
+</p>
+<h3 id="section-13" class="section">
+<a href="ordered-and-unordered-factors.html#DOCF14" id="FOOT14" class="calibre24">(14)</a>
+</h3>
+<p>
+Readers should note that there are eight states and territories in Australia, namely the Australian Capital Territory, New South Wales, the Northern Territory, Queensland, South Australia, Tasmania, Victoria and Western Australia.
+</p>
+<h3 id="section-14" class="section">
+<a href="ordered-and-unordered-factors.html#DOCF15" id="FOOT15" class="calibre24">(15)</a>
+</h3>
+<p>
+Note that <code class="calibre2">tapply()</code> also works in this case when its second argument is not a factor, e.g., ‘<code class="calibre2">tapply(incomes, state)</code>’, and this is true for quite a few other functions, since arguments are <em>coerced</em> to factors when necessary (using <code class="calibre2">as.factor()</code>).
+</p>
+<h3 id="section-15" class="section">
+<a href="arrays-and-matrices.html#DOCF16" id="FOOT16" class="calibre24">(16)</a>
+</h3>
+<p>
+Note that <code class="calibre2">x %<em>% x</code> is ambiguous, as it could mean either x’x or x x’, where x is the column form. In such cases the smaller matrix seems implicitly to be the interpretation adopted, so the scalar x’x is in this case the result. The matrix x x’ may be calculated either by <code class="calibre2">cbind(x) %</em>% x</code> or <code class="calibre2">x %*% rbind(x)</code> since the result of <code class="calibre2">rbind()</code> or <code class="calibre2">cbind()</code> is always a matrix. However, the best way to compute x’x or x x’ is <code class="calibre2">crossprod(x)</code> or <code class="calibre2">x %o% x</code> respectively.
+</p>
+<h3 id="section-16" class="section">
+<a href="arrays-and-matrices.html#DOCF17" id="FOOT17" class="calibre24">(17)</a>
+</h3>
+<p>
+Even better would be to form a matrix square root B with A = BB’ and find the squared length of the solution of By = x , perhaps using the Cholesky or eigen decomposition of A.
+</p>
+<h3 id="section-17" class="section">
+<a href="lists-and-data-frames.html#DOCF18" id="FOOT18" class="calibre24">(18)</a>
+</h3>
+<p>
+Conversion of character columns to factors is overridden using the <code class="calibre2">stringsAsFactors</code> argument to the <code class="calibre2">data.frame()</code> function.
+</p>
+<h3 id="section-18" class="section">
+<a href="lists-and-data-frames.html#DOCF19" id="FOOT19" class="calibre24">(19)</a>
+</h3>
+<p>
+See the on-line help for <code class="calibre2">autoload</code> for the meaning of the second term.
+</p>
+<h3 id="section-19" class="section">
+<a href="reading-data-from-files.html#DOCF20" id="FOOT20" class="calibre24">(20)</a>
+</h3>
+<p>
+Under UNIX, the utilities <code class="calibre2">sed</code> or<code class="calibre2">awk</code> can be used.
+</p>
+<h3 id="section-20" class="section">
+<a href="grouping-loops-and-conditional-execution.html#DOCF21" id="FOOT21" class="calibre24">(21)</a>
+</h3>
+<p>
+to be discussed later, or use <code class="calibre2">xyplot</code> from package <a href="https://CRAN.R-project.org/package=lattice"><strong>lattice</strong></a>.
+</p>
+<h3 id="section-21" class="section">
+<a href="writing-your-own-functions.html#DOCF22" id="FOOT22" class="calibre24">(22)</a>
+</h3>
+<p>
+See also the methods described in <a href="writing-your-own-functions.html#Statistical-models-in-R">Statistical models in R</a>
+</p>
+<h3 id="section-22" class="section">
+<a href="writing-your-own-functions.html#DOCF23" id="FOOT23" class="calibre24">(23)</a>
+</h3>
+<p>
+In some sense this mimics the behavior in S-PLUS since in S-PLUS this operator always creates or assigns to a global variable.
+</p>
+<h3 id="section-23" class="section">
+<a href="writing-your-own-functions.html#DOCF24" id="FOOT24" class="calibre24">(24)</a>
+</h3>
+<p>
+So it is hidden under UNIX.
+</p>
+<h3 id="section-24" class="section">
+<a href="graphical-procedures.html#DOCF25" id="FOOT25" class="calibre24">(25)</a>
+</h3>
+<p>
+Some graphics parameters such as the size of the current device are for information only.
+</p>
+<h3 id="section-25" class="section">
+<a href="appendix-b-invoking-r.html#DOCF26" id="FOOT26" class="calibre24">(26)</a>
+</h3>
+<p>
+2.5Gb on versions of Windows that support 3Gb per process and have the support enabled: see the rw-FAQ Q2.9; 3.5Gb on most 64-bit versions of Windows.
+</p>
+<h3 id="section-26" class="section">
+<a href="appendix-c-the-command-line-editor.html#DOCF27" id="FOOT27" class="calibre24">(27)</a>
+</h3>
+<p>
+The ‘Emacs Speaks Statistics’ package; see the URL <a href="https://ESS.R-project.org/" class="uri">https://ESS.R-project.org/</a>
+</p>
+<h3 id="section-27" class="section">
+<a href="appendix-c-the-command-line-editor.html#DOCF28" id="FOOT28" class="calibre24">(28)</a>
+</h3>
+<p>
+It is possible to build R using an emulation of GNU <strong>readline</strong>, such as one based on NetBSD’s <strong>editline</strong>, it which case only a subset of the capabilities may be provided.
+</p>
+<h3 id="section-28" class="section">
+<a href="appendix-c-the-command-line-editor.html#DOCF29" id="FOOT29" class="calibre24">(29)</a>
+</h3>
+<p>
+On a PC keyboard this is usually the Alt key, occasionally the ‘Windows’ key. On a Mac keyboard normally no meta key is available.
+</p>
+<h3 id="section-29" class="section">
+<a href="appendix-c-the-command-line-editor.html#DOCF30" id="FOOT30" class="calibre24">(30)</a>
+</h3>
+<p>
+In particular, not versions 6.3 or later: this is worked around as from R 3.4.0.
+</p>
+</div>
 <hr />
 
 </div>
