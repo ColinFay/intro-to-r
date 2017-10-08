@@ -4,8 +4,8 @@ author: "R Development Core Team"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-output_dir: "docs"
 link-citations: yes
+github-repo: ColinFay/intro-to-r
 description: "An Introduction to R is based on the former 'Notes on R', gives an introduction to the language and how to use R for doing statistical analysis and graphics.	"
 ---
 
