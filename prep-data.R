@@ -2,6 +2,10 @@ library(tidyverse)
 library(stringr)
 library(glue)
 library(magrittr)
+
+file.create("ga")
+write("<!-- Global Site Tag (gtag.js) - Google Analytics -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-65307055-3\"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n\n  gtag('config', 'UA-65307055-3');\n</script>", file="ga",append=TRUE)
+
 # Download epub
 
 download.file("https://cran.r-project.org/doc/manuals/r-release/R-intro.epub", destfile = "intro.epub")
