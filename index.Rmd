@@ -1,6 +1,6 @@
 --- 
 title: "An Introduction to R"
-author: "R Development Core Team"
+author: "W. N. Venables, D. M. Smith, R Core Team"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
